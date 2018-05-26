@@ -3,13 +3,14 @@
 # Created by winchoo
 # 2018/5/22
 #
-#===============六个基本魔法===============
+#===============7个基本魔法===============
 # join
 # split
 # find
 # strip
 # upper
 # lower
+# replace
 
 # 1. lower示例（大写转换为小写）
 test_lower = "WinchOO"
@@ -44,3 +45,10 @@ print("  strip去除指定字符：",v_strip2)
 test_split = "aaabccccbtttbgyhyba"
 v_split = test_split.split('b',2)
 print("6. split指定字符分割及限制分割个数：",v_split)
+
+# 7. replace示例（替换）
+test_replace = "winchoo"
+v_replace = test_replace.replace("nc","xxx")
+print("7. replace示例（替换）：",v_replace)
+v_replace2 = test_replace.replace("o","xxx",2) #替换前两次出现的o
+print("   replace示例（替换）：",v_replace2)
