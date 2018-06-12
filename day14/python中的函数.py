@@ -68,5 +68,6 @@ print("--------------------------------")
 
 def test(x,*args,**kwargs):#多个使用的话，只能使用这个格式，这样的话就可以接收任何形式的参数
     print(x)
+    print(args)
     print(kwargs)
-test(1,a=2,b=3)
+test(1,2,3,4,a=2,b=3)
