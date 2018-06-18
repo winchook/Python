@@ -86,3 +86,61 @@ num = [1,3,100,-1]
 print(max(num))
 print(min(num))
 
+
+
+#ord函数表示ASCII转字符
+print(chr(97))
+print(ord('a'))
+
+#pow函数
+print(pow(2,3))#2的三次方
+print(pow(2,3,2))#2的三次方取余%
+
+#reversed函数：反转
+lst = [1,2,3,4]
+print(list(reversed(lst)))
+
+#round函数表示四舍五入
+print(round(3.5))
+
+#函数slice表示切片
+l = 'hello'
+s1 = slice(1,5)
+s2 = slice(1,4,2)
+print(l[s1])
+print(l[s2])
+print(s2.start)
+print(s2.stop)
+print(s2.step)
+
+#排序函数sorted()
+#注意：排序本质就是在比较大小，只有同类型之间可以进行比较，不同类型不能比较
+l = [1,5,3,4]
+# l2 = [1,5,'a',4]#报错
+print(sorted(l))
+# print(sorted(l2))#报错
+people = [
+    {'name': 'zhangsan', 'age': 1000},
+    {'name': 'lisi', 'age': 10000},
+    {'name': 'wangwu', 'age': 9000},
+    {'name': 'zhaoliu', 'age': 18},
+]
+print(sorted(people,key=lambda dic:dic['age']))
+
+#sum函数：求和
+num = [2,3,4]
+print(sum(num))
+print(sum(range(5)))
+
+#type函数判断类型
+msg = '123'
+if type(msg) is str:
+    msg = int(msg)
+    res = msg+1
+    print(res)
+
+#import不能导入字符串类型
+#__import__()可以导入字符串类型
+# module_name = 'test'
+# m = __import__(module_name)
+# m.say_hi()

@@ -27,3 +27,5 @@ people = [
     {'name': 'zhaoliu', 'age': 18},
 ]
 print(max(people,key = lambda dic:dic['age']))
+
+
