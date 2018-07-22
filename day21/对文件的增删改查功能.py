@@ -3,56 +3,159 @@
 # Created by winchoo
 # 2018/7/3
 
+import os
+def file_handle(filename,backend_data,record_list=None,type='fetch'): #type:fetch append change
+    new_file=filename+'_new'
+    bak_file=filename+'_bak'
+    if type == 'fetch':
+        r_list = []
+        with open(filename, 'r') as f:
+            tag = False
+            for line in f:
+                if line.strip() == backend_data:
+                    tag = True
+                    continue
+                if tag and line.startswith('backend'):
+                    break
+                if tag and line:
+                    r_list.append(line.strip())
+            for line in r_list:
+                print(line)
+            return r_list
+    elif type == 'append':
+        with open(filename, 'r') as read_file, \
+                open(new_file, 'w') as write_file:
+            for r_line in read_file:
+                write_file.write(r_line)
+
+            for new_line in record_list:
+                if new_line.startswith('backend'):
+                    write_file.write(new_line + '\n')
+                else:
+                    write_file.write("%s%s\n" % (' ' * 8, new_line))
+        os.rename(filename, bak_file)
+        os.rename(new_file, filename)
+        os.remove(bak_file)
+    elif type == 'change':
+        with open(filename, 'r') as read_file, \
+                open(new_file, 'w') as write_file:
+            tag=False
+            has_write=False
+            for r_line in read_file:
+                if r_line.strip() == backend_data:
+                    tag=True
+                    continue
+                if tag and r_line.startswith('backend'):
+                    tag=False
+                if not tag:
+                    write_file.write(r_line)
+                else:
+                    if not has_write:
+                        for new_line in record_list:
+                            if new_line.startswith('backend'):
+                                write_file.write(new_line+'\n')
+                            else:
+                                write_file.write('%s%s\n' %(' '*8,new_line))
+                        has_write=True
+        os.rename(filename, bak_file)
+        os.rename(new_file, filename)
+        os.remove(bak_file)
+
 def fetch(data):
-    print('\033[1;43m这是查询功能\033[0m')
-    print('\033[1;43m用户输入的数据：\033[0m',data)
-    backend_data = 'backend %s' %data
-    with open('haproxy.conf','r') as read_f:
-        ret=[]
-        tag = False
-        for read_line in read_f:
-            if read_line.strip() == backend_data:#strip默认就是去掉空格和回车的
-                tag = True
-                continue
-            if tag and read_line.startswith('backend'):
-                break
-            if tag:#tag变为True的情况下，应该打印出内容
-                print('\033[1;43m%s\033[0m' %read_line,end='')
-                ret.append(read_line)
-    return ret
+    backend_data="backend %s" %data
+    return file_handle('haproxy.conf',backend_data,type='fetch')
+def add(data):
+    backend=data['backend']
+    record_list=fetch(backend)
+    current_record="server %s %s weight %s maxconn %s" %(data['record']['server'],\
+                                                         data['record']['server'],\
+                                                         data['record']['weight'],\
+                                                         data['record']['maxconn'])
+    backend_data="backend %s" %backend
 
+    if not record_list:
+        record_list.append(backend_data)
+        record_list.append(current_record)
+        file_handle('haproxy.conf',backend_data,record_list,type='append')
+    else:
+        record_list.insert(0,backend_data)
+        if current_record not in record_list:
+            record_list.append(current_record)
+        file_handle('haproxy.conf',backend_data,record_list,type='change')
+def remove(data):
+    backend=data['backend']
+    record_list=fetch(backend)
+    current_record="server %s %s weight %s maxconn %s" %(data['record']['server'],\
+                                                         data['record']['server'],\
+                                                         data['record']['weight'],\
+                                                         data['record']['maxconn'])
+    backend_data = "backend %s" % backend
+    if not record_list or current_record not in record_list:
+        print('\033[33;1m无此条记录\033[0m')
+        return
+    else:
+        #处理record_list
+        record_list.insert(0,backend_data)
+        record_list.remove(current_record)
+        file_handle('haproxy.conf',backend_data,record_list,type='change')
+def change(data):
+    backend=data[0]['backend']
+    record_list=fetch(backend)
 
-def add():
+    old_record="server %s %s weight %s maxconn %s" %(data[0]['record']['server'],\
+                                                         data[0]['record']['server'],\
+                                                         data[0]['record']['weight'],\
+                                                         data[0]['record']['maxconn'])
+
+    new_record = "server %s %s weight %s maxconn %s" % (data[1]['record']['server'], \
+                                                        data[1]['record']['server'], \
+                                                        data[1]['record']['weight'], \
+                                                        data[1]['record']['maxconn'])
+    backend_data="backend %s" %backend
+
+    if not record_list or old_record not in record_list:
+        print('\033[33;1m无此内容\033[0m')
+        return
+    else:
+        record_list.insert(0,backend_data)
+        index=record_list.index(old_record)
+        record_list[index]=new_record
+        file_handle('haproxy.conf',backend_data,record_list,type='change')
+def qita(data):
     pass
 
-def change():
-    pass
 
-def delete():
-    pass
-
-if __name__=='__main__':#记住这里放置可执行的代码
-    msg = '''
-    1.查询
-    2.添加
-    3.修改
-    4.删除
-    5.退出
+if __name__ == '__main__':
+    msg='''
+    1：查询
+    2：添加
+    3：删除
+    4：修改
+    5：退出
+    6:其他操作
     '''
-    msg_dic = {
+    menu_dic={
         '1':fetch,
         '2':add,
-        '3':change,
-        '4':delete,
+        '3':remove,
+        '4':change,
+        '5':exit,
+        '6':qita,
     }
-
     while True:
         print(msg)
-        choice = input('请输入你的选项：').strip()
-        if not choice:continue
+        choice=input("操作>>: ").strip()
+        if len(choice) == 0 or choice not in menu_dic:continue
         if choice == '5':break
 
-        data = input('请输入你的数据：').strip()
-        res=msg_dic[choice](data)
-        print(res)
+        data=input("数据>>: ").strip()
 
+        #menu_dic[choice](data)==fetch(data)
+        if choice != '1':
+            data=eval(data)
+        menu_dic[choice](data) #add(data)
+
+
+
+
+# [{'backend':'www.oldboy20.org','record':{'server':'2.2.2.3','weight':20,'maxconn':3000}},{'backend':'www.oldboy10.org','record':{'server':'10.10.0.10','weight':9999,'maxconn':33333333333}}]
