@@ -70,7 +70,7 @@ obj = re.compile('\d{3}')
 ret = obj.search('abc123eeee')
 print(ret.group())  # 123
 
-ret = re.finditer('\d', 'ds3sy4784a')
+ret = re.finditer('\d', 'ds3sy4784a')#当需要处理的数据非常大的时候，这时就可以存放在迭代器里面。
 print(ret)  # <callable_iterator object at 0x10195f940>
 
 print(next(ret).group())
@@ -95,3 +95,7 @@ print(re.search('(?P<name>[a-z]+)(?P<age>\d+)','winchoo28rekwjfkdjoas').group('a
 ret=re.findall(r"-?\d+\.\d*|(-?\d+)","1-2*(60+(-40.35/5)-(-4*3))")
 ret.remove("")
 print(ret)
+
+#补充：
+print(re.findall('(abc)+','abcabcrewrq'))#加上()做分组，代表一个整体
+print(re.findall('(?:abc)+','abcabcrewrq'))#?:取消优先级，显示匹配内容
