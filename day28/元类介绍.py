@@ -16,7 +16,7 @@
 #
 # print(type(Bar))
 
-
+#元类是用来生成类的
 class Foo:
     def __init__(self):
         pass
