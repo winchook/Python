@@ -3,19 +3,22 @@
 # Created by winchoo
 # 2018/8/29
 
+#不能把文件名命名为socket，且系统有的内置变量都不能命名
+#有人说TCP是可靠传输,没错，那是因为可靠在数据不会丢失，收到后会有ACK x+2有回应
+
 import socket
 
-phone = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-phone.bind('127.0.0.1',8000)
-phone.listen(5)
+phone = socket.socket(socket.AF_INET,socket.SOCK_STREAM)#买手机
+phone.bind(('127.0.0.1',8000))#绑定手机卡
+phone.listen(5)#开机，相当于半链接池
+print('---->')
+conn,addr=phone.accept()#等电话
 
-conn,addr=phone.accept()
-
-msg = conn.recv(1024)
+msg = conn.recv(1024)#收消息
 
 print('客户端发来的消息是：',msg)
 
-conn.send(msg)
+conn.send(msg)#发消息
 
 conn.close()
 phone.close()
