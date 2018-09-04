@@ -16,6 +16,7 @@ conn,addr=phone.accept()#等电话
 
 msg = conn.recv(1024)#收消息
 
+
 print('客户端发来的消息是：',msg)
 
 conn.send(msg)#发消息
