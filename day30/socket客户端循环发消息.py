@@ -15,6 +15,7 @@ tcp_client.connect(ip_port)
 
 while True:
     msg = input('>>>:').strip()#使用用户输入的方式
+    if not msg:continue#判断客户端输入是否为空
     tcp_client.send(msg.encode('utf-8'))
     #tcp_client.send('hello'.encode('utf-8'))#这种方式写的固定了
     print('客户端已经发送消息')
