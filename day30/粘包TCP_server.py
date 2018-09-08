@@ -11,8 +11,8 @@ conn,addr=tcp_server.accept()
 
 data1=conn.recv(5)#这里的10表示一次只收取10个字节，所以会按照每次的收取大小来执行，如果设置较大的数字例如1024，则会一次性收取完客户端所传入的数据
 print('第1次数据',data1)
-
-data2=conn.recv(5)
+#打破了一次发一次收的观念，客户端只管给自己缓冲区发数据，服务端只管从自己的缓冲区取数据
+data2=conn.recv(1)
 print('第2次数据',data2)
 
 data3=conn.recv(5)
