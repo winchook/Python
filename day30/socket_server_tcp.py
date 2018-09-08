@@ -13,7 +13,7 @@ while True:
     print('新的客户端连接',addr)
     while True:
         #收
-        try:
+        try:#用异常处理解决客户端在非正常关闭的情况下报的错误
             cmd=conn.recv(buffer_size)
             if not cmd:break
             print('收到客户端命令',cmd)
@@ -34,6 +34,6 @@ while True:
             #     cmd_res='执行成功'.encode('gbk')
             conn.send(cmd_res)
         except Exception as e:
-            print(e)
+            print(e)#将打印"[WinError 10054] 远程主机强迫关闭了一个现有的连接。"
             break
 
