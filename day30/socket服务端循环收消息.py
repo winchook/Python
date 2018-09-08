@@ -14,16 +14,20 @@ tcp_server = socket(AF_INET,SOCK_STREAM)
 tcp_server.bind(ip_port)
 tcp_server.listen(back_log)
 
-print('服务端开始运行了')
+
 while True:#实现循环的接消息
+    print('服务端开始运行了')
     conn,addr = tcp_server.accept()#运行后，这块会卡住，因为accept要等一个TCP链接进来
     print('双向链接是：',conn)
     print('客户端地址：',addr)
 
     while True:#实现循环收发消息
-        data = conn.recv(buffer_size)
-        print('客户端发来的消息是：',data.decode('utf-8'))
-        conn.send(data.upper())
+        try:#实现客户端断开后服务端依然可以运行
+            data = conn.recv(buffer_size)
+            print('客户端发来的消息是：',data.decode('utf-8'))
+            conn.send(data.upper())
+        except Exception:
+            break
     conn.close()
 
 tcp_server.close()
