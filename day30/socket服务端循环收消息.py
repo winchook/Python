@@ -11,6 +11,8 @@ back_log = 5
 buffer_size = 1024
 
 tcp_server = socket(AF_INET,SOCK_STREAM)
+#加入一条socket配置，重用ip和端口，解决服务端仍然存在四次握手的time_wait状态在占用地址的问题
+tcp_server.setsockopt(SOL_SOCKET,SO_REUSEADDR,1)
 tcp_server.bind(ip_port)
 tcp_server.listen(back_log)
 
