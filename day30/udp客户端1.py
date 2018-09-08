@@ -8,6 +8,6 @@ while True:
     msg=input('>>: ').strip()
     udp_client.sendto(msg.encode('utf-8'),ip_port)
 
-    data,addr=udp_client.recvfrom(buffer_size)
+    data,addr=udp_client.recvfrom(buffer_size)#基于UDP套接字的recvfrom如果收消息的时候自己的缓冲区为空，直接收到的消息为空
     # print(data.decode('utf-8'))
     print(data)
