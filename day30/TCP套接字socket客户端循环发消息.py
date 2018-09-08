@@ -21,7 +21,7 @@ while True:
     tcp_client.send(msg.encode('utf-8'))
     #tcp_client.send('hello'.encode('utf-8'))#这种方式写的固定了
     print('客户端已经发送消息')
-    data = tcp_client.recv(buffer_size)#注意这块收发的时候只能是字节格式
+    data = tcp_client.recv(buffer_size)#注意这块收发的时候只能是字节格式，如果收消息的时候自己的缓冲区为空，直接堵塞住
     print('收到服务端发来的消息：',data.decode('utf-8'))
 
 tcp_client.close()
