@@ -15,7 +15,6 @@ tcp_client.connect(ip_port)
 
 while True:
     msg = input('>>>:').strip()#使用用户输入的方式
-
     if not msg:continue#判断客户端输入是否为空
 
     tcp_client.send(msg.encode('utf-8'))
