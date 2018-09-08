@@ -24,6 +24,7 @@ while True:
                                  stdout=subprocess.PIPE,
                                  stdin=subprocess.PIPE)
             err=res.stderr.read()
+
             if err:
                 cmd_res=err
             else:
