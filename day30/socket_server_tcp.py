@@ -15,7 +15,7 @@ while True:
         #收
         try:#用异常处理解决客户端在非正常关闭的情况下报的错误
             cmd=conn.recv(buffer_size)
-            if not cmd:break
+            if not cmd:break#处理客户端正常关闭
             print('收到客户端命令',cmd)
 
             #执行命令，得到命令的运行结果cmd_res
