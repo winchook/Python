@@ -30,8 +30,8 @@ while True:
                 cmd_res=res.stdout.read()
 
             #发
-            # if not cmd_res:
-            #     cmd_res='执行成功'.encode('gbk')
+            if not cmd_res:#用if判断解决死循环的情况
+                cmd_res='执行成功'.encode('gbk')
             conn.send(cmd_res)
         except Exception as e:
             print(e)#将打印"[WinError 10054] 远程主机强迫关闭了一个现有的连接。"
