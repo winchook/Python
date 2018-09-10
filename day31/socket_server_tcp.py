@@ -6,6 +6,10 @@
 import socketserver
 
 class MyServer(socketserver.BaseRequestHandler):
+    #To implement a
+    #specific service, all you need to do is to derive(继承、派生) a class which
+    #defines a handle() method.
+    #所以需要定义一个handle
     def handle(self):
         print('conn is:',self.request) #相当于conn
         print('addr is:',self.client_address)#相当于addr
