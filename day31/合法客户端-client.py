@@ -3,8 +3,6 @@
 # Created by winchoo
 # 2018/9/11
 
-#_*_coding:utf-8_*_
-__author__ = 'Linhaifeng'
 from socket import *
 import hmac,os
 
