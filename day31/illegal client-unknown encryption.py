@@ -4,7 +4,6 @@
 # 2018/9/11
 
 from socket import *
-
 def client_handler(ip_port,bufsize=1024):
     tcp_socket_client=socket(AF_INET,SOCK_STREAM)
     tcp_socket_client.connect(ip_port)

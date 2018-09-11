@@ -5,7 +5,6 @@
 
 from socket import *
 import hmac,os
-
 secret_key=b'winchoo'
 def conn_auth(conn):
     '''
