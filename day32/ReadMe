@@ -1,0 +1,9 @@
+使用方法：
+1、Terminal方式启动FTP_server
+python ftp_sever.py start
+
+2、Terminal方式启动FTP_client
+python ftp_client.py -s 127.0.0.1 -P 8080 -u winchoo -p 123
+
+3、上传文件
+put 12.png images
