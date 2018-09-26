@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作</title>
+
+    <style>
+        <!--p{-->
+            <!--color:#7D3C98;-->
+        <!--}-->
+
+        <!--p{-->
+            <!--color:rgb(255,0,0);/*表示红色，三个数字可以调整*/-->
+        <!--}-->
+
+        p{
+            color:rgba(255,0,0,0.3);/*表示多了一个透明度*/
+            font-size:50px;/*字体大小，使用像素进行调整*/
+            font-family:'Lucida Bright';/*字体*/
+            font-style:oblique;/*斜体*/
+        }
+        /*背景属性--重点*/
+        .back{
+            border:1px solid red;/*添加边框*/
+            width:800px;/*这里的像素如果大于图片自身的大小，图片会出现重复的现象*/
+            height:800px;
+            background-image:url("img1.png");
+            background-repeat:no-repeat;/*图片不会出现重复铺满的情况*/
+            background-position:center center;/*这里的位置是在800x800的中间,center可以调整为left，right等及数字*/
+        }
+
+        /*背景图片*/
+        span{
+            display: inline-block;/*内联属性（不独占一行），块级（可以设定长和宽）*/
+            width: 18px;
+            height: 20px;
+            background-image: url("http://dig.chouti.com/images/icon_18_118.png?v=2.13");
+            background-position: 0 -120px;/*纵轴表示右边参数，调整-100px即可，这样就可以在指定区域显示长图的一部分*/
+        }
+    </style>
+
+</head>
+<body>
+
+<p>独在异乡为异客</p>
+<div class="back"></div>
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</body>
+</html>
