@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display属性</title>
+    <style>
+        .div2,p,a,span{/*统一设定长和宽，内联标签不能设定长和宽，块级标签可以设定长和宽*/
+             width: 100px;
+             height: 100px;
+        }
+
+         .div2{
+             background-color: yellow;
+             /*display: inline;*//*将块级标签设置为内联标签*/
+             display: none;/*隐藏*/
+         }
+
+        p{
+             background-color: red;
+            /*display: inline;*/
+         }
+
+        span{
+             background-color: palevioletred;
+             display: inline-block;
+         }
+        a{
+             background-color: green;
+             display: inline-block;
+         }
+        .outer{
+            word-spacing: -8px;
+        }
+    </style>
+</head>
+<body>
+<div class="div2">divvvvv</div>
+<p>pppppp</p>
+
+
+<div class="outer">
+    <span>spannnnnn</span>
+    <a href="#">click</a>
+</body>
+</html>
