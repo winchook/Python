@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS控制语句</title>
+</head>
+<script>
+    //if控制语句
+    var name="winchoo";
+    if(name=="chao"){
+        alert("OK")
+    }
+    else if(name=="chason"){
+        alert("good")
+    }
+    else{
+        alert("this is winchoo")
+    }
+
+    //例2
+    var x= (new Date()).getDay();
+    //获取今天的星期值，0为星期天
+    var y;
+
+    if ( (x==6) || (x==0) ) {
+    y="周末";
+    }else{
+    y="工作日";
+    }
+
+    alert(y);
+
+    //等价于
+
+    y="工作日";
+    if ( (x==6) || (x==0) ) {
+    y="周末";
+    }
+</script>
+
+<script>
+    //switch选择控制语句
+    var week=2;
+    switch(week){
+    case 1:alert("星期一");    break;
+    case 2:alert("星期二");    break;
+    case 3:alert("星期三");    break;
+    case 4:alert("星期四");    break;
+    case 5:alert("星期五");    break;
+    case 6:alert("星期六");    break;
+    case 7:alert("星期天");    break;
+    default:alert("nothing");//default的位置尽量放到最后，就不用写break了
+    }
+
+    //循环for while
+    for(var i=0; i<10; i++){
+        document.write("welcome"+i+"<br>")
+    }
+
+</script>
+<body>
+
+</body>
+</html>
