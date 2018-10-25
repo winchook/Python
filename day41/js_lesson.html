@@ -31,7 +31,7 @@
     sayHello();
 </script>
 <!--string数据类型的使用-->
-<script>
+<!--<script>
     var str="\u4f60\u597d\n欢迎来到\nJavaScript世界";
     alert(str);
     //数据类型的转化
@@ -48,6 +48,62 @@
     console.log(typeof undefined);
     console.log(typeof [1,2,3]);
     console.log(typeof {"name":"winchoo"});
+
+    ////算数运算符
+    //递增、递减
+    var i=1;
+    console.log(i++);
+    console.log(++i);
+    console.log(i--);
+    console.log(--i);
+
+    var a=1;
+    var b=1;
+    a=-a;  //a=-1
+
+    var c="10";
+    alert(typeof (c));
+    c=+c;    //类型转换
+    alert(typeof (c));
+//    -------------------
+    var d="yuan";
+    d=+d;
+    alert(d);//NaN:属于Number类型的一个特殊值,当遇到将字符串转成数字无效时,就会得到一个NaN数据
+    alert(typeof(d));//Number
+
+    //NaN特点:
+
+    var n=NaN;
+
+    alert(n>3);
+    alert(n<3);
+    alert(n==3);
+    alert(n==NaN);
+
+    alert(n!=NaN);//NaN参与的所有的运算都是false,除了!=
+
+
+</script>-->
+
+<script>
+
+    //逻辑运算符
+    console.log("hello" && 4)
+    if("hello" && 4){
+
+    }
+    console.log(2==2)
+    console.log(2=="2")//只要有一方是数据，就会按照数据进行转化
+    console.log(2==="2")
+    console.log("2"<"20")//如果两侧都是字符串类型，比较的是最高位的asc码，如果最高位相等，继续取第二位比较
+    //Boolean运算符
+    var temp=new Object();// false;[];0; null; undefined;object(new Object();)
+
+    if(temp){
+        console.log("winchoo")
+    }else {
+        console.log("chason")
+    }
 </script>
 </body>
 </html>
