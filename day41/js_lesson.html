@@ -2,13 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS引入方式</title>
+    <title>JS</title>
 </head>
 <body>
 <!--<script>
     alert("提示信息")
 </script>-->
 <!--使用引入的方式-->
-<script src="test.js"></script>
+<!--<script src="test.js"></script>-->
+
+<script>
+    var x;
+    x=10;
+    x=33;//会覆盖之前x变量的值
+    var y=33;
+    console.log(x);
+    console.log(y);
+    var MyFirstName="winchoo", age=28;//一行可以声明多个变量，并且可以是不同类型
+    console.log(MyFirstName);//驼峰命名方式
+    console.log(age);
+</script>
+
+<script>
+    function sayHello(){//自定义标识符
+        var hellostr="您好";//字符串常量
+        document.write(hellostr);
+    }
+    sayHello();
+</script>
 </body>
 </html>
