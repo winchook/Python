@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS数组</title>
+</head>
+<body>
+<script>
+    //一维数组创建方式
+    //1.
+    var arr1=[1,"hello",[11,2],{"name":"winchoo"}]
+    //2.
+    var arr2=new Array(3)
+    //3.
+    var arr3=new Array(1,"world",true,[1,2,3]);
+    console.log(typeof arr1);
+    console.log(typeof arr2);
+    console.log(typeof arr3);
+    //注意：
+    var arr4=new Array(10)//10是大小，不是内容
+
+    //创建二维数组
+    var cnweek=new Array(7);
+    for (var i=0;i<=6;i++){
+        cnweek[i]=new Array(2);
+    }
+    cnweek[0][0]="星期日";
+    cnweek[0][1]="Sunday";
+    cnweek[1][0]="星期一";
+    cnweek[1][1]="Monday";
+    cnweek[6][0]="星期六";
+    cnweek[6][1]="Saturday";
+
+    //Array对象的属性，获取数组元素的个数:length
+    var cnweek=new Array(7);
+    cnweek[0]="星期日";
+    cnweek[1]="星期一";
+    cnweek[2]="星期二";
+    cnweek[3]="星期三";
+    cnweek[4]="星期四";
+    cnweek[5]="星期五";
+    cnweek[6]="星期六";
+    for (var i=0;i<cnweek.length;i++){
+      document.write(cnweek[i]+" | ");
+    }
+
+    //------Array对象的方法------
+    //连接数组-join方法
+    //书写格式
+    //x.join(bystr)
+    //使用注解
+    //
+    //x代表数组对象
+    //bystr作为连接数组中元素的字符串
+    //返回连接后的字符串
+    //与字符串的split功能刚好相反
+    var arr1=[1, 2, 3, 4, 5, 6, 7];
+    var str1=arr1.join("-");
+    alert(str1);
+    //结果为"1-2-3-4-5-6-7"
+
+    //连接数组-concat方法
+    //x.concat(value,...)
+    var a = [1,2,3];
+    var a = new Array(1,2,3);
+    var b=a.concat(4,5) ;
+    alert(a.toString());
+    //返回结果为1,2,3
+    alert(b.toString());//js里面所有的对象都有这个方法toString(),因为返回对象的原始字符串表示
+    //返回结果为1,2,3,4,5
+
+    //toString()方法
+    var ret2=arr1.toString();
+    console.log(ret2);
+    console.log(typeof ret2);
+
+    //反转-reverse方法
+    var arr1=[23,53,1100,44];
+    console.log(arr1.reverse());
+    console.log(arr1.sort());//非正常排序
+
+    //按照大小进行排序
+    //自定义一个函数
+    function f(a,b){
+        if(a>b){
+            return 1
+        }
+        else if(a<b){
+            return -1
+        }
+        else{
+            return 0
+        }
+    }
+    console.log(arr1.sort(f))
+
+    //push pop栈操作，栈可以理解成子弹夹，先进后出
+    var arr=[1,2,3];
+    //向里面加入数据
+    arr.push([7,8,0]);
+    arr.push("hello",5);
+    console.log(arr);
+    console.log(arr.length);
+    //从里面取出数据
+    console.log(arr.pop())
+    console.log(arr.length)
+
+
+
+
+</script>
+</body>
+</html>
