@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <title>JS控制语句</title>
 </head>
+
+<body>
+
+<p>hello winchoo1</p>
+<p>hello winchoo2</p>
+<p>hello winchoo3</p>
+<p>hello winchoo4</p>
+
+<div>divvvvv</div>
+
+<script>
+    var eles_P=document.getElementsByTagName("p");
+    console.log(eles_P);
+    for (var i=0;i<eles_P.length;i++){
+        console.log(i);
+        console.log(eles_P[i]);
+    }
+</script>
+
 <script>
     //if控制语句
     var name="winchoo";
@@ -56,9 +75,46 @@
     for(var i=0; i<10; i++){
         document.write("welcome"+i+"<br>")
     }
-
+    //数组方式
+    var attr=[111,222,333]
+    <!--for (var i=0;i<3;i++){-->
+        <!--document.write(i);-->
+        <!--document.write(attr[i]);-->
+        <!--document.write("<br>");-->
+    <!--}-->
+    for (i in attr){
+        document.write(i);
+        document.write(attr[i]);
+        document.write("<br>");
+    }
 </script>
-<body>
 
+<script>
+    //while循环实现1-100的和
+    var x=0;
+    var i=1;
+    while (i<=100){
+        x+=i;
+        i++;
+    }
+    console.log(x);
+    //for循环实现1-100的和
+    var sum=0;
+    for (var i=0;i<=100;i++){
+        sum+=i;
+    }
+    console.log(sum)
+
+    //异常处理
+    try{
+        console.log(123);
+    }
+    catch(e){
+        console.log(e);
+    }
+    finally{
+        console.log("finally");
+    }
+</script>
 </body>
 </html>
