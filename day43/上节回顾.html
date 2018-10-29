@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM回顾</title>
+</head>
+<body>
+<p onclick="func(this)">hello</p><!--当需要查找事件本身的时候，用this-->
+<div>hello DIV</div>
+<script>
+    //绑定事件方式1
+    function func(self){
+        console.log(self);//这里设置除this以外的，用self即可
+        alert(1234);
+    }
+
+    //绑定事件方式2
+    var ele=document.getElementsByTagName("div")[0];
+    ele.onclick=function(){
+        console.log(this);//打印标签本身
+        //alert(6666);
+    }
+</script>
+</body>
+</html>
