@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS select左右移</title>
+</head>
+<body>
+<div id="box1">
+    <select multiple="multiple" size="10" id="left">
+        <option>book</option>
+        <option>book2</option>
+        <option>book3</option>
+        <option>book4</option>
+        <option>book5</option>
+        <option>book6</option>
+    </select>
+</div>
+
+
+<div id="choice">
+    <input class="add"     type="button" value="--->" onclick="add()"><br>
+    <input class="remove"  type="button" value="<---" onclick="remove();"><br>
+    <input class="add-all" type="button" value="====>" onclick="ADDall()"><br>
+    <input class="remove-all" type="button" value="<===" onclick="remall()">
+</div>
+
+
+<div>
+    <select multiple="multiple" size="10" id="right">
+        <option>book9</option>
+    </select>
+</div>
+
+<script>
+
+     function add(){
+         var right=document.getElementById("right");
+         var options=document.getElementById("left").getElementsByTagName("option");
+
+         for (var i=0; i<options.length;i++){
+
+             var option=options[i];
+
+             if(option.selected==true){
+                   right.appendChild(option);
+                 i--;
+             }
+
+         }
+
+     }
+
+    function ADDall(){
+         var right=document.getElementById("right");
+         var options=document.getElementById("left").getElementsByTagName("option");
+         for (var i=0; i<options.length;i++){
+             var option=options[i];
+             right.appendChild(option);
+             i--;
+
+         }
+
+     }
+
+</script>
+</body>
+</html>
