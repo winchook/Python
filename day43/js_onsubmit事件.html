@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js_onsubmit事件</title>
+</head>
+<body>
+
+<form action="" id="form1">
+    <input type="text" name="username">
+    <input type="submit" name="提交">
+</form>
+<script>
+    var ele=document.getElementById("form1");
+    ele.onsubmit=function(e){
+        alert(123);
+
+        //阻止事件发生的两种方式，阻止了提交form表单里面的数据
+        //return false;
+        e.preventDefault();
+    }
+</script>
+</body>
+</html>
