@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery属性操作</title>
+</head>
+<body>
+<!--
+--------------------------属性
+$("").attr();
+$("").removeAttr();
+$("").prop();
+$("").removeProp();
+--------------------------CSS类
+$("").addClass(class|fn)
+$("").removeClass([class|fn])
+--------------------------HTML代码/文本/值
+$("").html([val|fn])
+$("").text([val|fn])
+$("").val([val|fn|arr])
+---------------------------
+$("").css("color","red")
+-->
+<div class="div1" con="c1"></div>
+<input type="checkbox" checked="checked">是否可见
+<input type="checkbox">是否可见
+<div id="id1">
+    uuuuu
+    <p>ppppp</p>
+</div>
+<script src="jquery-3.1.1.js"></script>
+<script>
+    console.log($("div").hasClass("div11"));
+    console.log($("div").attr("con"));
+    console.log($("div").attr("con","c2"));
+
+    //attr属性
+    console.log($(":checkbox:first").attr("checked"))//设定了属性值获取到的就是checked
+    console.log($(":checkbox:last").attr("checked"))//如果没有设定属性值，获取到的则是undefined
+
+    //prop属性：拿到的状态做判断，就会方便很多
+    console.log($(":checkbox:first").prop("checked"))//如果设定了属性值，获取到的就是true
+    console.log($(":checkbox:last").prop("checked"))//如果没有设定属性值，获取到的就是false
+    console.log($("div").prop("class"));//只能找到自有的属性
+
+    console.log($("#id1").html())
+    console.log($("#id1").text())
+    console.log($("#id1").html("<h1>winchoo</h1>"))//将会把id=id1的全部内容替换成h1标签
+    console.log($("#id1").text("<h1>winchoo</h1>"))//将会把id=id1的全部内容替换成h1标签
+
+    //固有属性
+    console.log($(":text").val());
+    console.log($(":text").next().val())
+    $(":text").val("789");
+
+    $("div").css({"color":"red","background-color":"green"})
+</script>
+</body>
+</html>
