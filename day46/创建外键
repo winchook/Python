@@ -1,0 +1,52 @@
+---  每一个班主任会对应多个学生 , 而每个学生只能对应一个班主任
+
+----主表
+
+CREATE TABLE ClassCharger(
+
+       id TINYINT PRIMARY KEY auto_increment,
+       name VARCHAR (20),
+       age INT ,
+       is_marriged boolean  -- show create table ClassCharger: tinyint(1)
+
+);
+
+INSERT INTO ClassCharger (name,age,is_marriged) VALUES ("冰冰",12,0),
+                                                       ("丹丹",14,0),
+                                                       ("歪歪",22,0),
+                                                       ("姗姗",20,0),
+                                                       ("小雨",21,0);
+
+
+----子表
+
+CREATE TABLE Student(
+
+       id INT PRIMARY KEY auto_increment,
+       name VARCHAR (20),
+       charger_id TINYINT,     --切记:作为外键一定要和关联主键的数据类型保持一致
+       -- [ADD CONSTRAINT charger_fk_stu]FOREIGN KEY (charger_id) REFERENCES ClassCharger(id)
+
+) ENGINE=INNODB;
+
+INSERT INTO Student(name,charger_id) VALUES ("alvin1",2),
+                                            ("alvin2",4),
+                                            ("alvin3",1),
+                                            ("alvin4",3),
+                                            ("alvin5",1),
+                                            ("alvin6",3),
+                                            ("alvin7",2);
+
+
+DELETE FROM ClassCharger WHERE name="冰冰";
+INSERT student (name,charger_id) VALUES ("yuan",1);
+-- 删除居然成功,可是 alvin3显示还是有班主任id=1的冰冰的;
+
+-----------增加外键和删除外键---------
+
+ALTER TABLE student  ADD CONSTRAINT abc
+                     FOREIGN KEY(charger_id)
+                     REFERENCES  classcharger(id);
+
+
+ALTER TABLE student DROP FOREIGN KEY abc;
