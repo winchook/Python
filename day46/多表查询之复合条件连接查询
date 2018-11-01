@@ -1,0 +1,14 @@
+-- 查询员工年龄大于等于25岁的部门
+
+    SELECT DISTINCT department.dept_name
+    FROM employee,department
+    WHERE employee.dept_id = department.dept_id
+    AND age>25;
+
+
+--以内连接的方式查询employee和department表，并且以age字段的升序方式显示
+
+    select employee.emp_id,employee.emp_name,employee.age,department.dept_name
+    from employee,department
+    where employee.dept_id = department.dept_id
+    order by age asc;
