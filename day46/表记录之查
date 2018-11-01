@@ -1,0 +1,234 @@
+-- 查询表达式
+
+   SELECT *|field1,filed2 ...   FROM tab_name
+                  WHERE 条件
+                  GROUP BY field
+                  HAVING 筛选
+                  ORDER BY field
+                  LIMIT 限制条数
+
+
+ ---准备表
+
+   CREATE TABLE ExamResult(
+
+   id INT PRIMARY KEY  auto_increment,
+   name VARCHAR (20),
+   JS DOUBLE ,
+   Django DOUBLE ,
+   OpenStack DOUBLE
+);
+
+
+INSERT INTO ExamResult VALUES  (1,"yuan",98,98,98),
+                               (2,"xialv",35,98,67),
+                               (3,"alex",59,59,62),
+                               (4,"wusir",88,89,82),
+                               (5,"alvin",88,98,67),
+                               (6,"yuan",86,100,55);
+
+
+-- （1）select [distinct] *|field1，field2，......   from tab_name
+            -- 其中from指定从哪张表筛选，*表示查找所有列，也可以指定一个列
+            -- 表明确指定要查找的列，distinct用来剔除重复行。
+
+                    -- 查询表中所有学生的信息。
+                    select * from ExamResult;
+                    -- 查询表中所有学生的姓名和对应的英语成绩。
+                    select name,JS from ExamResult;
+                    -- 过滤表中重复数据。
+                    select distinct JS ,name from ExamResult;
+
+
+
+-- （2）select 也可以使用表达式，并且可以使用: 字段 as 别名或者:字段 别名
+
+                -- 在所有学生分数上加10分特长分显示。
+
+                select name,JS+10,Django+10,OpenStack+10 from ExamResult;
+                -- 统计每个学生的总分。
+                select name,JS+Django+OpenStack from ExamResult;
+                -- 使用别名表示学生总分。
+                select name as 姓名,JS+Django+OpenStack as 总成绩 from ExamResult;
+                select name,JS+Django+OpenStack 总成绩 from ExamResult;
+
+                select name JS from ExamResult; -- what will happen?---->记得加逗号
+
+-- （3）使用where子句，进行过滤查询。
+
+            -- 查询姓名为XXX的学生成绩
+            select * from ExamResult where name='yuan';
+            -- 查询英语成绩大于90分的同学
+            select id,name,JS from ExamResult where JS>90;
+            -- 查询总分大于200分的所有同学
+            select name,JS+Django+OpenStack as 总成绩 from
+                        ExamResult where JS+Django+OpenStack>200 ;
+            -- where字句中可以使用：
+                     -- 比较运算符：
+                        > < >= <= <> !=
+                        between 80 and 100 值在10到20之间
+                        in(80,90,100) 值是10或20或30
+                        like 'yuan%'
+                        /*
+                        pattern可以是%或者_，
+                        如果是%则表示任意多字符，此例如唐僧,唐国强
+                        如果是_则表示一个字符唐_，只有唐僧符合。两个_则表示两个字符：__
+                        */
+
+                    -- 逻辑运算符
+                        在多个条件直接可以使用逻辑运算符 and or not
+            -- 练习
+                -- 查询JS分数在 70－100之间的同学。
+                select name ,JS from ExamResult where JS between 80 and 100;
+                -- 查询Django分数为75,76,77的同学。
+                select name ,Django from ExamResult where Django in (75,98,77);
+                -- 查询所有姓王的学生成绩。
+                select * from ExamResult where name like '王%';
+                -- 查询JS分>90，Django分>90的同学。
+                select id,name from ExamResult where JS>90 and Django >90;
+                -- 查找缺考数学的学生的姓名
+                select name from ExamResult where Database is null;
+
+
+-- （4）Order by 指定排序的列，排序的列即可是表中的列名，也可以是select 语句后指定的别名。
+
+              -- select *|field1,field2... from tab_name order by field [Asc|Desc]
+
+              -- Asc 升序、Desc 降序，其中asc为默认值 ORDER BY 子句应位于SELECT语句的结尾。
+              -- 练习：
+              -- 对JS成绩排序后输出。
+              select * from ExamResult order by JS;
+              -- 对总分排序按从高到低的顺序输出
+              select name ,(ifnull(JS,0)+ifnull(Django,0)+ifnull(Database,0))
+                   总成绩 from ExamResult order by 总成绩 desc;
+              -- 对姓李的学生成绩排序输出
+              select name ,(ifnull(JS,0)+ifnull(Django,0)+ifnull(OpenStack,0))
+                   总成绩 from ExamResult where name like 'a%'
+                                         order by 总成绩 desc;
+
+
+-- （5）group by 分组查询：
+        CREATE TABLE order_menu(
+             id INT PRIMARY KEY auto_increment,
+             product_name VARCHAR (20),
+             price FLOAT(6,2),
+             born_date DATE,
+             class VARCHAR (20)
+                                );
+
+
+         INSERT INTO order_menu (product_name,price,born_date,class) VALUES
+                                             ("苹果",20,20170612,"水果"),
+                                             ("香蕉",80,20170602,"水果"),
+                                             ("水壶",120,20170612,"电器"),
+                                             ("被罩",70,20170612,"床上用品"),
+                                             ("音响",420,20170612,"电器"),
+                                             ("床单",55,20170612,"床上用品"),
+                                             ("草莓",34,20170612,"水果");
+
+
+            -- 注意,按分组条件分组后每一组只会显示第一条记录
+
+            -- group by字句，其后可以接多个列名，也可以跟having子句,对group by 的结果进行筛选。
+
+
+                    -- 按位置字段筛选
+                       select * from order_menu group by 5;
+
+                    -- 练习：对购物表按类名分组后显示每一组商品的价格总和
+                       select class,SUM(price)from order_menu group by class;
+
+                    -- 练习：对购物表按类名分组后显示每一组商品价格总和超过150的商品
+                       select class,SUM(price)from order_menu group by class
+                                                        HAVING SUM(price)>150;
+
+
+
+                   /*
+                   having 和 where两者都可以对查询结果进行进一步的过滤，差别有：
+                     <1>where语句只能用在分组之前的筛选，having可以用在分组之后的筛选；
+                     <2>使用where语句的地方都可以用having进行替换
+                     <3>having中可以用聚合函数，where中就不行。
+                   */
+
+
+            -- GROUP_CONCAT() 函数
+            SELECT id,GROUP_CONCAT(name),GROUP_CONCAT(JS) from ExamResult GROUP BY id;
+
+
+-- （6）聚合函数： 先不要管聚合函数要干嘛，先把要求的内容查出来再包上聚合函数即可。
+                 --   (一般和分组查询配合使用)
+
+        --<1> 统计表中所有记录
+
+            -- COUNT(列名)：统计行的个数
+                    -- 统计一个班级共有多少学生？先查出所有的学生，再用count包上
+                     select count(*) from ExamResult;
+                    -- 统计JS成绩大于70的学生有多少个？
+                     select count(JS) from ExamResult where JS>70;
+                    -- 统计总分大于280的人数有多少？
+                     select count(name) from ExamResult
+                           where (ifnull(JS,0)+ifnull(Django,0)+ifnull(OpenStack,0))>280;
+                    -- 注意:count(*)统计所有行;     count(字段)不统计null值.
+
+            -- SUM(列名)：统计满足条件的行的内容和
+                    -- 统计一个班级JS总成绩？先查出所有的JS成绩，再用sum包上
+                        select JS as JS总成绩 from ExamResult;
+                        select sum(JS) as JS总成绩 from ExamResult;
+                    -- 统计一个班级各科分别的总成绩
+                        select sum(JS) as JS总成绩,
+                               sum(Django) as Django总成绩,
+                               sum(OpenStack) as OpenStack from ExamResult;
+
+                    -- 统计一个班级各科的成绩总和
+                        select sum(ifnull(JS,0)+ifnull(Django,0)+ifnull(Database,0))
+                                                    as 总成绩 from ExamResult;
+                    -- 统计一个班级JS成绩平均分
+                        select sum(JS)/count(*) from ExamResult ;
+                    -- 注意：sum仅对数值起作用，否则会报错。
+
+            -- AVG(列名)：
+                            -- 求一个班级JS平均分？先查出所有的JS分，然后用avg包上。
+                                select avg(ifnull(JS,0)) from ExamResult;
+                            -- 求一个班级总分平均分
+                                select avg((ifnull(JS,0)+ifnull(Django,0)+ifnull(Database,0)))
+                                                         from ExamResult ;
+            -- Max、Min
+                            -- 求班级最高分和最低分（数值范围在统计中特别有用）
+                              select Max((ifnull(JS,0)+ifnull(Django,0)+ifnull(OpenStack,0)))
+                              最高分 from ExamResult;
+                              select Min((ifnull(JS,0)+ifnull(Django,0)+ifnull(OpenStack,0)))
+                              最低分 from ExamResult;
+                            -- 求购物表中单价最高的商品名称及价格
+                              ---SELECT id, MAX(price) FROM order_menu;--id和最高价商品是一个商品吗?
+
+                              SELECT MAX(price) FROM order_menu;
+
+                            -- 注意：null 和所有的数计算都是null，所以需要用ifnull将null转换为0！
+                            --      -----ifnull(JS,0)
+
+
+                -- with rollup的使用
+
+            --<2> 统计分组后的组记录
+
+
+-- （7） 重点：Select from where group by having order by
+                -- Mysql在执行sql语句时的执行顺序：
+                -- from  where  select group by  having order by
+                -- 分析:
+                select JS as JS成绩 from ExamResult where JS成绩 >70; ---- 不成功
+                select JS as JS成绩 from ExamResult having JS成绩 >90; --- 成功
+
+--  (8) limit
+                SELECT * from ExamResult limit 1;
+                SELECT * from ExamResult limit 2,5;--跳过前两条显示接下来的五条纪录
+                SELECT * from ExamResult limit 2,2;
+
+
+--- (9) 使用正则表达式查询
+        SELECT * FROM employee WHERE emp_name REGEXP '^yu';
+
+        SELECT * FROM employee WHERE emp_name REGEXP 'yun$';
+
+        SELECT * FROM employee WHERE emp_name REGEXP 'm{2}';

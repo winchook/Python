@@ -1,0 +1,59 @@
+-- 1.增加一条记录insert
+
+      /*insert ［into］ tab_name (field1,filed2,.......) values (value1,value2,.......);*/
+
+
+      create table employee_new(
+                 id int primary key auto_increment,
+                 name varchar(20) not null unique,
+                 birthday varchar(20),
+                 salary float(7,2)
+                             );
+
+       insert into employee_new (id,name,birthday,salary) values
+                     (1,'yuan','1990-09-09',9000);
+
+       insert into employee_new values
+       (2,'alex','1989-08-08',3000);
+
+       insert into employee_new (name,salary) values
+       ('xialv',1000);
+
+      -- 插入多条数据
+       insert into employee_new values
+       (4,'alvin1','1993-04-20',3000),
+       (5,'alvin2','1995-05-12',5000);
+
+      -- set插入: insert ［into］ tab_name set 字段名=值
+
+      insert into employee_new set id=12,name="alvin3";
+
+
+-- 2.修改表记录  update tab_name set field1=value1,field2=value2,......[where 语句]
+
+    /*      UPDATE语法可以用新值更新原有表行中的各列。
+            SET子句指示要修改哪些列和要给予哪些值。
+            WHERE子句指定应更新哪些行。如没有WHERE子句，则更新所有的行。*/
+
+
+    update employee_new set birthday="1989-10-24" WHERE id=1;
+
+    --- 将yuan的薪水在原有基础上增加1000元。
+    update employee_new set salary=salary+4000 where name='yuan';
+
+-- 3.删除表纪录
+
+     delete from tab_name [where ....]
+
+        /*    如果不跟where语句则删除整张表中的数据
+            delete只能用来删除一行记录
+            delete语句只能删除表中的内容，不能删除表本身，想要删除表，用drop
+            TRUNCATE TABLE也可以删除表中的所有数据，词语句首先摧毁表，再新建表。此种方式删除的数据不能在
+            事务中恢复。*/
+
+                -- 删除表中名称为’alex’的记录。
+                delete from employee_new where name='alex';
+                -- 删除表中所有记录。
+                delete from employee_new;-- 注意auto_increment没有被重置:alter table employee auto_increment=1;
+                -- 使用truncate删除表中记录。
+                truncate table emp_new;
