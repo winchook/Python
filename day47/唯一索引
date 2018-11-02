@@ -1,0 +1,11 @@
+-- 唯一索引
+    alter table tab_name add unique [index|key] [索引名称](字段名称,...)
+
+    alter table users add unique(name)-- 索引值默认为字段名show create table users;
+    alter table users add unique key user_name(name);-- 索引值为user_name
+
+    -- 添加联合索引
+    alter table users add unique index name_age(name,age);#show create table users;
+
+    -- 删除唯一索引
+    alter table tab_name drop {index|key} index_name
