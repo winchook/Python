@@ -1,0 +1,37 @@
+create table test2(id int PRIMARY KEY auto_increment,name VARCHAR(20)) engine=innodb;
+INSERT INTO test2(name) VALUE ("张三"),
+                              ("李四"),
+                              ("王五");
+
+
+
+start transaction;
+insert into test2 (name)values('winchoo');
+select * from test2;
+commit;
+
+
+-- 保留点
+
+start transaction;
+insert into test2 (name)values('ch');
+savepoint insert_ch;
+select * from test2;
+
+
+
+delete from test2 where id=4;
+savepoint delete1;
+select * from test2;
+
+
+delete from test2 where id=1;
+savepoint delete2;
+select * from test2;
+
+rollback to delete1;
+
+
+select * from test2;
+
+savepoint
