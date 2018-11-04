@@ -1,0 +1,28 @@
+--创建表
+create table Indexdb.t1(id int,name varchar(20));
+
+
+--存储过程
+
+delimiter $$
+create procedure autoinsert()
+BEGIN
+declare i int default 1;
+while(i<500000)do
+insert into Indexdb.t1 values(i,'yuan');
+set i=i+1;
+end while;
+END$$
+
+delimiter ;
+
+--调用函数
+call autoinsert();
+
+-- 花费时间比较：
+-- 创建索引前
+   select * from Indexdb.t1 where id=300000;--0.32s
+-- 添加索引
+   create index index_id on Indexdb.t1(id);
+-- 创建索引后
+   select * from Indexdb.t1 where id=300000;--0.00s

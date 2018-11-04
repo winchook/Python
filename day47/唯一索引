@@ -9,3 +9,83 @@
 
     -- 删除唯一索引
     alter table tab_name drop {index|key} index_name
+
+
+--创建表时
+--语法：
+    CREATE TABLE 表名 (
+                字段名1  数据类型 [完整性约束条件…],
+                字段名2  数据类型 [完整性约束条件…],
+                [UNIQUE | FULLTEXT | SPATIAL ]   INDEX | KEY
+                [索引名]  (字段名[(长度)]  [ASC |DESC])
+                );
+
+--------------------------------
+
+--创建普通索引示例：
+
+    CREATE TABLE emp1 (
+        id INT,
+        name VARCHAR(30) ,
+        resume VARCHAR(50),
+        INDEX index_emp_name (name)
+    --KEY index_dept_name (dept_name)
+        );
+
+
+
+--创建唯一索引示例：
+
+    CREATE TABLE emp2 (
+        id INT,
+        name VARCHAR(30) ,
+        bank_num CHAR(18) UNIQUE ,
+        resume VARCHAR(50),
+        UNIQUE INDEX index_emp_name (name)
+        );
+
+--创建全文索引示例：
+
+    CREATE TABLE emp3 (
+        id INT,
+        name VARCHAR(30) ,
+        resume VARCHAR(50),
+        FULLTEXT INDEX index_resume (resume)
+        );
+
+--创建多列索引示例：
+
+    CREATE TABLE emp4 (
+        id INT,
+        name VARCHAR(30) ,
+        resume VARCHAR(50),
+        INDEX index_name_resume (name, resume)
+        );
+
+
+
+---------------------------------
+
+---添加索引
+
+    ---CREATE在已存在的表上创建索引
+      CREATE  [UNIQUE | FULLTEXT | SPATIAL ]  INDEX  索引名
+              ON 表名 (字段名[(长度)]  [ASC |DESC]) ;
+
+    ---ALTER TABLE在已存在的表上创建索引
+
+      ALTER TABLE 表名 ADD  [UNIQUE | FULLTEXT | SPATIAL ] INDEX
+                    索引名 (字段名[(长度)]  [ASC |DESC]) ;
+
+
+
+     CREATE INDEX index_emp_name on emp1(name);
+     ALTER TABLE emp2 ADD UNIQUE INDEX index_bank_num(band_num);
+
+
+-- 删除索引
+
+    语法：DROP INDEX 索引名 on 表名
+
+    DROP INDEX index_emp_name on emp1;
+    DROP INDEX bank_num on emp2;
