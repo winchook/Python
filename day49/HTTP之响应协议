@@ -1,0 +1,75 @@
+三　响应协议
+3.1　响应内容
+响应协议的格式如下：
+
+响应首行；
+响应头信息；
+空行；
+响应体。
+响应内容是由服务器发送给浏览器的内容，浏览器会根据响应内容来显示。遇到<img src=''>会开一个新的线程加载，所以有时图片多的话，内容会先显示出来，然后图片才一张张加载出来。
+
+
+Request URL:http://127.0.0.1:8090/login/
+Request Method:GET
+Status Code:200 OK
+Remote Address:127.0.0.1:8090
+Response Headers
+view source
+Content-Type:text/html; charset=utf-8
+Date:Wed, 26 Oct 2016 06:48:50 GMT
+Server:WSGIServer/0.2 CPython/3.5.2
+X-Frame-Options:SAMEORIGIN
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/login/" method="post">
+  用户名：<input type="text" name="username"/>
+  <input type="submit" value="提交"/>
+</form>
+</body>
+</html>
+
+HTTP/1.1 200 OK：响应协议为HTTP1.1，状态码为200，表示请求成功，OK是对状态码的解释；
+Server:WSGIServer/0.2 CPython/3.5.2：服务器的版本信息；
+Content-Type: text/html;charset=UTF-8：响应体使用的编码为UTF-8；
+Content-Length: 724：响应体为724字节；
+Set-Cookie: JSESSIONID=C97E2B4C55553EAB46079A4F263435A4; Path=/hello：响应给客户端的Cookie；
+Date: Wed, 25 Sep 2012 04:15:03 GMT：响应的时间，这可能会有8小时的时区差；
+3.2　状态码
+响应头对浏览器来说很重要，它说明了响应的真正含义。例如200表示响应成功了，302表示重定向，这说明浏览器需要再发一个新的请求。
+
+
+200：请求成功，浏览器会把响应体内容（通常是html）显示在浏览器中；
+404：请求的资源没有找到，说明客户端错误的请求了不存在的资源；
+500：请求资源找到了，但服务器内部出现了错误；
+302：重定向，当响应码为302时，表示服务器要求浏览器重新再发一个请求，服务器会发送一个响应头Location，它指定了新请求的URL地址；
+304：
+
+  当用户第一次请求index.html时，服务器会添加一个名为Last-Modified响应头，这个头说明了
+  index.html的最后修改时间，浏览器会把index.html内容，以及最后响应时间缓存下来。当用户第
+  二次请求index.html时，在请求中包含一个名为If-Modified-Since请求头，它的值就是第一次请
+  求时服务器通过Last-Modified响应头发送给浏览器的值，即index.html最后的修改时间，
+  If-Modified-Since请求头就是在告诉服务器，我这里浏览器缓存的index.html最后修改时间是这个,
+  您看看现在的index.html最后修改时间是不是这个，如果还是，那么您就不用再响应这个index.html
+  内容了，我会把缓存的内容直接显示出来。而服务器端会获取If-Modified-Since值，与index.html
+  的当前最后修改时间比对，如果相同，服务器会发响应码304，表示index.html与浏览器上次缓存的相
+  同，无需再次发送，浏览器可以显示自己的缓存页面，如果比对不同，那么说明index.html已经做了修
+  改，服务器会响应200。
+
+
+3.3　其他响应头
+告诉浏览器不要缓存的响应头：
+
+Expires: -1；
+Cache-Control: no-cache；
+Pragma: no-cache；
+自动刷新响应头，浏览器会在3秒之后请求http://www.baidu.com：
+
+Refresh: 3;url=http://www.baidu.com
+3.4　HTML中指定响应头
+在HTMl页面中可以使用<meta http-equiv="" content="">来指定响应头，例如在index.html页面中给出<meta http-equiv="Refresh" content="3;url=http://www.baidu.com">，表示浏览器只会显示index.html页面3秒，然后自动跳转到http://www.baidu.com.
