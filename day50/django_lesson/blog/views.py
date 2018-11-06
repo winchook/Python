@@ -34,9 +34,10 @@ def register(request):
         print(request.POST.get("age"))
         user=request.POST.get("user")
         if user=="winchoo":
-            # redirect主要用于自己的目录跳转
+            # redirect主要用于自己的目录跳转,浏览器跳转后的url会改变
+            # 所以使用这种方式进行跳转
             return redirect("/login/")
-
+            # 浏览器跳转后的url不会改变
             #return render(request,"login.html",locals())
 
         return HttpResponse("success!")
