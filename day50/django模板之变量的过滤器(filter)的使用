@@ -1,0 +1,58 @@
+语法格式：      {{obj|filter:param}}
+
+
+
+# 1  add          ：   给变量加上相应的值
+   #
+   # 2  addslashes   :    给变量中的引号前加上斜线
+   #
+   # 3  capfirst     :    首字母大写
+   #
+   # 4  cut          ：   从字符串中移除指定的字符
+   #
+   # 5  date         ：   格式化日期字符串
+   #
+   # 6  default      ：   如果值是False,就替换成设置的默认值，否则就是用本来的值
+   #
+   # 7  default_if_none:  如果值是None，就替换成设置的默认值，否则就使用本来的值
+
+
+#实例:
+
+#value1="aBcDe"
+{{ value1|upper }}<br>
+
+#value2=5
+{{ value2|add:3 }}<br>
+
+#value3='he  llo wo r ld'
+{{ value3|cut:' ' }}<br>
+
+#import datetime
+#value4=datetime.datetime.now()
+{{ value4|date:'Y-m-d' }}<br>
+
+#value5=[]
+{{ value5|default:'空的' }}<br>
+
+#value6='<a href="#">跳转</a>'
+
+{{ value6 }}
+
+{% autoescape off %}
+  {{ value6 }}
+{% endautoescape %}
+
+{{ value6|safe }}<br>
+
+{{ value6|striptags }}
+
+#value7='1234'
+{{ value7|filesizeformat }}<br>
+{{ value7|first }}<br>
+{{ value7|length }}<br>
+{{ value7|slice:":-1" }}<br>
+
+#value8='http://www.baidu.com/?a=1&b=3'
+{{ value8|urlencode }}<br>
+    value9='hello I am yuan'
