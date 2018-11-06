@@ -1,0 +1,61 @@
+－－－－－－深度变量的查找（万能的句点号）
+
+在到目前为止的例子中，我们通过 context 传递的简单参数值主要是字符串，然而，模板系统能够非常简洁地处理更加复杂的数据结构，例如list、dictionary和自定义的对象。
+
+在 Django 模板中遍历复杂数据结构的关键是句点字符 (.)。
+
+
+
+#最好是用几个例子来说明一下。
+# 首先，句点可用于访问列表索引，例如：
+
+>>> from django.template import Template, Context
+>>> t = Template('Item 2 is {{ items.2 }}.')
+>>> c = Context({'items': ['apples', 'bananas', 'carrots']})
+>>> t.render(c)
+'Item 2 is carrots.'
+
+#假设你要向模板传递一个 Python 字典。 要通过字典键访问该字典的值，可使用一个句点：
+>>> from django.template import Template, Context
+>>> person = {'name': 'Sally', 'age': '43'}
+>>> t = Template('{{ person.name }} is {{ person.age }} years old.')
+>>> c = Context({'person': person})
+>>> t.render(c)
+'Sally is 43 years old.'
+
+#同样，也可以通过句点来访问对象的属性。 比方说， Python 的 datetime.date 对象有
+#year 、 month 和 day 几个属性，你同样可以在模板中使用句点来访问这些属性：
+
+>>> from django.template import Template, Context
+>>> import datetime
+>>> d = datetime.date(1993, 5, 2)
+>>> d.year
+>>> d.month
+>>> d.day
+>>> t = Template('The month is {{ date.month }} and the year is {{ date.year }}.')
+>>> c = Context({'date': d})
+>>> t.render(c)
+'The month is 5 and the year is 1993.'
+
+# 这个例子使用了一个自定义的类，演示了通过实例变量加一点(dots)来访问它的属性，这个方法适
+# 用于任意的对象。
+>>> from django.template import Template, Context
+>>> class Person(object):
+...     def __init__(self, first_name, last_name):
+...         self.first_name, self.last_name = first_name, last_name
+>>> t = Template('Hello, {{ person.first_name }} {{ person.last_name }}.')
+>>> c = Context({'person': Person('John', 'Smith')})
+>>> t.render(c)
+'Hello, John Smith.'
+
+# 点语法也可以用来引用对象的方法。 例如，每个 Python 字符串都有 upper() 和 isdigit()
+# 方法，你在模板中可以使用同样的句点语法来调用它们：
+>>> from django.template import Template, Context
+>>> t = Template('{{ var }} -- {{ var.upper }} -- {{ var.isdigit }}')
+>>> t.render(Context({'var': 'hello'}))
+'hello -- HELLO -- False'
+>>> t.render(Context({'var': '123'}))
+'123 -- 123 -- True'
+
+# 注意这里调用方法时并* 没有* 使用圆括号 而且也无法给该方法传递参数；你只能调用不需参数的
+# 方法。
