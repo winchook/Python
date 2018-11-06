@@ -1,3 +1,4 @@
+{% load my_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +18,15 @@
 <body>
 
 <h1  style="color: #2459a2">hello world</h1>
+
+{{2|filter_multi:3}}
+{{2|filter_multi:"[3,4]"}}
+
+{% simple_tag_multi 3 5 6 %}
+
+{% if 2|filter_multi:30 < 100 %}
+    {{ 2|filter_multi:30 }}
+{% endif %}
 
 </body>
 </html>
