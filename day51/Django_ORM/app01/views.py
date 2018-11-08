@@ -8,6 +8,6 @@ def index(request):
 
 def addbook(request):
 
-    b=Book(name="python3",price=99,author="winchoo",pub_date="2018-11-07")
+    b=Book(name="python全栈开发",price=99,author="winchoo",pub_date="2018-11-08")
     b.save()
     return HttpResponse("添加成功")
