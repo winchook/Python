@@ -93,9 +93,9 @@ DATABASES = {
 
         'USER': 'root',   #数据库用户名
 
-        'PASSWORD': 'DtPChIBUJYMnNyqCZYDD', #数据库密码
+        'PASSWORD': '123456', #数据库密码
 
-        'HOST': '122.200.133.182', #数据库主机，留空默认为localhost
+        'HOST': 'xx.xx.xx.xx', #数据库主机，留空默认为localhost
 
         'PORT': '3306', #你的数据库端口
 
@@ -140,3 +140,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# add the log information
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+    }
+}
