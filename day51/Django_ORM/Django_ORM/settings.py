@@ -93,9 +93,9 @@ DATABASES = {
 
         'USER': 'root',   #数据库用户名
 
-        'PASSWORD': '123456', #数据库密码
+        'PASSWORD': 'DtPChIBUJYMnNyqCZYDD', #数据库密码
 
-        'HOST': 'xx.xx.xx.xx', #数据库主机，留空默认为localhost
+        'HOST': '122.200.133.182', #数据库主机，留空默认为localhost
 
         'PORT': '3306', #你的数据库端口
 

@@ -20,7 +20,17 @@
         <a href="/addbook/">添加书籍</a>
         <a href="/update/">修改书籍</a>
         <a href="/delete/">删除书籍</a>
+        <a href="/select/">查询书籍</a>
     </div>
+</div>
+<!--显示一个查询结果-->
+<hr>
+<div class="queryResult">
+{% for book in book_list%}
+    <div>
+        <p>{{book.name}}  ||  {{book.author}}  ||  {{book.price}}</p>
+    </div>
+{%endfor%}
 </div>
 
 </body>

@@ -41,3 +41,38 @@ def update(request):
 def delete(request):
     Book.objects.filter(author="winchoo").delete()
     return HttpResponse("删除成功")
+
+def select(request):
+    # all():查询所有结果
+    # book_list=Book.objects.all()
+    # print(book_list[0])#显示书籍名称
+
+    # filter():查询指定结果，该结果可迭代
+    # book_list = Book.objects.filter(id=2)
+
+    # all():查询前三条结果
+    # book_list = Book.objects.all()[:3]
+
+    # all():间隔两行查询结果
+    # book_list = Book.objects.all()[::2]
+
+    # all():反向查询结果
+    # book_list = Book.objects.all()[::-1]
+
+    # get():查询指定结果，该结果不可迭代，只能取一条记录，多条或者0条都会报错
+    # book_list = Book.objects.get(id=2)
+
+    # 按照条件查询结果
+    # book_list=Book.objects.filter(author="winchoo").values("name","price")
+
+    # exclude(*field)包含了与所给筛选条件不匹配的对象
+    # book_list=Book.objects.exclude(author="winchoo").values("name","price")
+
+    # distinct()从返回结果中剔除重复记录
+    book_list=Book.objects.all().values("name").distinct()
+
+    # count()返回数据库中匹配查询(QuerySet)的对象数量
+    book_count=Book.objects.all().values("name").distinct().count()
+    print(book_count)
+
+    return render(request,"index.html",{"book_list":book_list})
