@@ -69,10 +69,36 @@ def select(request):
     # book_list=Book.objects.exclude(author="winchoo").values("name","price")
 
     # distinct()从返回结果中剔除重复记录
-    book_list=Book.objects.all().values("name").distinct()
+    # book_list=Book.objects.all().values("name").distinct()
 
     # count()返回数据库中匹配查询(QuerySet)的对象数量
-    book_count=Book.objects.all().values("name").distinct().count()
-    print(book_count)
+    # book_count=Book.objects.all().values("name").distinct().count()
+    # print(book_count)
+
+
+    # ---------------了不起的双下划线(__)之单表条件查询----------------
+
+    # 模糊查询,万能的双下划线
+    # 查询价格大于50的书籍
+    # book_list=Book.objects.filter(price__gt=50).values("name","price")
+
+    # 获取price大于1 且 小于13的值
+    # book_list =Book.objects.filter(price__lt=13, id__gt=1)
+
+    # 获取author等于作者是winchoo、chason的数据
+    # book_list =Book.objects.filter(author__in=["winchoo", "chason"])
+
+    # not in
+    # book_list =Book.objects.exclude(price__in=[12, 45, 111])
+
+    # 查询以P开头的书籍,name__contains表示区分大小写
+    # book_list =Book.objects.filter(name__contains="P")
+
+    # 查询以p P开头的书籍,name__icontains表示不区分大小写
+    # book_list =Book.objects.filter(name__icontains="p").values("name","price")
+
+    # 范围bettwen and
+    book_list =Book.objects.filter(price__range=[12, 22])
+
 
     return render(request,"index.html",{"book_list":book_list})
