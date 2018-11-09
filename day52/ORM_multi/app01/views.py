@@ -13,15 +13,15 @@ def addbook(request):
     #方式一：增加数据
     # Book.objects.create(name="linux运维",price=77,pub_date="2017-12-12",publish_id=2)
     #方式二：增加数据，使用对象赋值
-    publish_obj=Publish.objects.filter(name="人民出版社")[0]
-    Book.objects.create(name="GO",price=23,pub_date="2017-05-12",publish=publish_obj)
+    # publish_obj=Publish.objects.filter(name="人民出版社")[0]
+    # Book.objects.create(name="GO",price=23,pub_date="2017-05-12",publish=publish_obj)
 
-    # book_obj=Book.objects.get(name="python")
+    book_obj=Book.objects.get(name="python")
     # print(book_obj.name)
     # print(book_obj.pub_date)
     #
-    # #一对多：book_obj.publish--------一定是一个对象
-    # print(book_obj.publish.name)
+    # #一对多：book_obj.publish点外键点出来的--------一定是一个对象
+    # print(book_obj.publish.name)#这样就可以通过外键拿到对应的值
     # print(book_obj.publish.city)
     # print(type(book_obj.publish))
 
@@ -34,7 +34,7 @@ def addbook(request):
 
     #方式二
     # pub_obj = Publish.objects.filter(name="人民出版社")[0]
-    # print(pub_obj.book_set.all().values("name","price"))
+    # print(pub_obj.book_set.all().values("name","price"))#这里的book_set是一个集合，后面的_set是系统自带的
     #print(type(pub_obj.book_set.all()))
 
     #方式三
