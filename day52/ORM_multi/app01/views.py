@@ -112,11 +112,11 @@ def addbook(request):
 
     # ret=Book.objects.all().aggregate(Avg("price"))
     # ret=Book.objects.all().aggregate(Sum("price"))
-    # ret=Book.objects.filter(authors__name="winchoo").aggregate(alex_money=Sum("price"))
+    # ret=Book.objects.filter(authors__name="winchoo").aggregate(winchoo_money=Sum("price"))
     # ret=Book.objects.filter(authors__name="winchoo").aggregate(Count("price"))
     # print(ret)
 
-    # ret=Book.objects.values("authors__name").annotate(Sum("price"))
+    # ret=Book.objects.values("authors__name").annotate(Sum("price"))#先分好组，再annotate每一组进行处理
     # print(ret)
 
     # ret=Publish.objects.values("name").annotate(abc=Min("book__price"))
@@ -156,34 +156,6 @@ def addbook(request):
     #
     # for i in ret:
     #     print(i.name)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
