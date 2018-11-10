@@ -16,7 +16,7 @@ def addbook(request):
     # publish_obj=Publish.objects.filter(name="人民出版社")[0]
     # Book.objects.create(name="GO",price=23,pub_date="2017-05-12",publish=publish_obj)
 
-    book_obj=Book.objects.get(name="python")
+    # book_obj=Book.objects.get(name="python")
     # print(book_obj.name)
     # print(book_obj.pub_date)
     #
@@ -37,19 +37,43 @@ def addbook(request):
     # print(pub_obj.book_set.all().values("name","price"))#这里的book_set是一个集合，后面的_set是系统自带的
     #print(type(pub_obj.book_set.all()))
 
-    #方式三
-    # ret=Book.objects.filter(publish__name="人民出版社").values("name","price")
-    # print(ret)
+    #方式三(filte value里面都可以使用双下划线__进行)
+    # publish_name中的publish表示models文件中外键的名称
+    ret=Book.objects.filter(publish__name="人民出版社").values("name","price")
+    print(ret)#结果：<QuerySet [{'name': 'GO', 'price': 23}]>
+    # 类似于SQL语句
+    # use
+    # cms;
+    # SELECT
+    # `app01_book`.
+    # `name`, `app01_book`.
+    # `price`
+    # FROM
+    # `app01_book`
+    # INNER
+    # JOIN
+    # `app01_publish`
+    # ON(`app01_book`.
+    # `publish_id` = `app01_publish`.
+    # `id`) WHERE
+    # `app01_publish`.
+    # `name` = '人民出版社'
+
+
     #
     # python这本书出版社的名字
-    # ret2=Publish.objects.filter(book__name="python").values("name")
-    # print(ret2)
-    # ret3=Book.objects.filter(name="python").values("publish__name")
-    # print(ret3)
+    # 第一种写法
+    ret2=Publish.objects.filter(book__name="python").values("name")
+    print(ret2)
+    # 第二种写法
+    ret3=Book.objects.filter(name="python").values("publish__name")
+    print(ret3)
     #
+    # 北京出版社出过的所有的书
     # ret4=Book.objects.filter(publish__city="北京").values("name")
     # print(ret4)
     #
+    # 查询上半年出版书籍的名称
     # ret5=Book.objects.filter(pub_date__lt="2017-07-01",pub_date__gt="2017-01-01").values("publish__name")
     # print(ret5)
 
