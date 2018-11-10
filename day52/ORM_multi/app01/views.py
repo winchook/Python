@@ -126,18 +126,21 @@ def addbook(request):
     # b=Book.objects.get(name="GO",price=77)
     # print(b)
 
-    Book.objects.all().update(price=F("price")+10)
+    # Book.objects.all().update(price=F("price")+10)
+    #
+    # ret=Book.objects.filter(Q(name__contains="p"))
+    # print(ret)
+    #
+    # ret=Book.objects.filter(Q(name="php"),price=87)#Q查询一定要放在前面
+    # print(ret)
 
-    ret=Book.objects.filter(Q(name__contains="p"))
-    print(ret)
+    ret=Book.objects.filter(price=89)
 
-    ret=Book.objects.filter(Q(name="php"),price=87)#Q查询一定要放在前面
-    print(ret)
-
-    # ret=Book.objects.filter(price=200)
-
-    # for i in ret:
-    #     print(i.price)
+    for i in ret:
+        print(i.price)
+    # QuerySet缓存机制，第二次就不会走数据库，直接会从缓存里面拿到，所以sql语句只会执行一次
+    for i in ret:
+        print(i.price)
     #
     # Book.objects.all().update(price=200)
     # ret = Book.objects.filter(price=100)
