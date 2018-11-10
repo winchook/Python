@@ -8,7 +8,7 @@ class Book(models.Model):
     price=models.IntegerField()
     pub_date=models.DateField()
     publish=models.ForeignKey("Publish",on_delete=models.CASCADE)#设置级联删除，否则创建表时会报错
-
+    authors=models.ManyToManyField("Author")
 
     def __str__(self):
         return self.name
@@ -22,14 +22,15 @@ class Publish(models.Model):
         return self.name
 
 
-# class Book_Author(models.Model):
-#     book=models.ForeignKey("Book")
-#     author=models.ForeignKey("Author")
+class Book_Author(models.Model):
+    book=models.ForeignKey("Book",on_delete=models.CASCADE)
+    author=models.ForeignKey("Author",on_delete=models.CASCADE)
 
 
 class Author(models.Model):
 
     name=models.CharField(max_length=32)
+    age=models.IntegerField(default=20)
 
     def __str__(self):
         return self.name

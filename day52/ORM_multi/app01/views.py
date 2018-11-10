@@ -39,8 +39,8 @@ def addbook(request):
 
     #方式三(filte value里面都可以使用双下划线__进行)
     # publish_name中的publish表示models文件中外键的名称
-    ret=Book.objects.filter(publish__name="人民出版社").values("name","price")
-    print(ret)#结果：<QuerySet [{'name': 'GO', 'price': 23}]>
+    # ret=Book.objects.filter(publish__name="人民出版社").values("name","price")
+    # print(ret)#结果：<QuerySet [{'name': 'GO', 'price': 23}]>
     # 类似于SQL语句
     # use
     # cms;
@@ -63,11 +63,11 @@ def addbook(request):
     #
     # python这本书出版社的名字
     # 第一种写法
-    ret2=Publish.objects.filter(book__name="python").values("name")
-    print(ret2)
+    # ret2=Publish.objects.filter(book__name="python").values("name")
+    # print(ret2)
     # 第二种写法
-    ret3=Book.objects.filter(name="python").values("publish__name")
-    print(ret3)
+    # ret3=Book.objects.filter(name="python").values("publish__name")
+    # print(ret3)
     #
     # 北京出版社出过的所有的书
     # ret4=Book.objects.filter(publish__city="北京").values("name")
@@ -102,18 +102,18 @@ def addbook(request):
     # obj=Book.objects.get(id=2)
     # print(obj.book_author_set.all()[0].author)
 
-    #alex出过的书籍名称及价格
+    #winchoo出过的书籍名称及价格
 
-    # ret=Book.objects.filter(book_author__author__name="alex").values("name","price")
+    # ret=Book.objects.filter(book_author__author__name="winchoo").values("name","price")
     # print(ret)
 
-    # ret2=Book.objects.filter(authors__name="alex").values("name","price","authors__name")
+    # ret2=Book.objects.filter(authors__name="winchoo").values("name","price","authors__name")
     # print(ret2)
 
     # ret=Book.objects.all().aggregate(Avg("price"))
     # ret=Book.objects.all().aggregate(Sum("price"))
-    # ret=Book.objects.filter(authors__name="alex").aggregate(alex_money=Sum("price"))
-    # ret=Book.objects.filter(authors__name="alex").aggregate(Count("price"))
+    # ret=Book.objects.filter(authors__name="winchoo").aggregate(alex_money=Sum("price"))
+    # ret=Book.objects.filter(authors__name="winchoo").aggregate(Count("price"))
     # print(ret)
 
     # ret=Book.objects.values("authors__name").annotate(Sum("price"))
