@@ -1,0 +1,8 @@
+2018-07-23 16:15:25,985 - root - INFO - logger info message
+2018-07-23 16:15:25,986 - root - WARNING - logger warning message
+2018-07-23 16:15:25,986 - root - ERROR - logger error message
+2018-07-23 16:15:25,986 - root - CRITICAL - logger critical message
+2018-07-23 16:20:47,517 - root - INFO - logger info message
+2018-07-23 16:20:47,518 - root - WARNING - logger warning message
+2018-07-23 16:20:47,518 - root - ERROR - logger error message
+2018-07-23 16:20:47,518 - root - CRITICAL - logger critical message
