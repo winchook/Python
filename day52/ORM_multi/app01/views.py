@@ -126,15 +126,15 @@ def addbook(request):
     # b=Book.objects.get(name="GO",price=77)
     # print(b)
 
-    #Book.objects.all().update(price=F("price")+10)
+    Book.objects.all().update(price=F("price")+10)
 
-    # ret=Book.objects.filter(Q(name__contains="G"))
-    # print(ret)
+    ret=Book.objects.filter(Q(name__contains="p"))
+    print(ret)
 
-    # ret=Book.objects.filter(Q(name="GO"),price=87)
-    # print(ret)
+    ret=Book.objects.filter(Q(name="php"),price=87)#Q查询一定要放在前面
+    print(ret)
 
-    #ret=Book.objects.filter(price=200)
+    # ret=Book.objects.filter(price=200)
 
     # for i in ret:
     #     print(i.price)
