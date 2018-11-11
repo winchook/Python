@@ -4,8 +4,8 @@ from django.db import models
 
 # 使用Book及Publish创建一对多的关系，外键永远在多的那一张表进行设置
 class Book(models.Model):
-    name=models.CharField(max_length=20)
-    price=models.IntegerField()
+    name=models.CharField(max_length=20,verbose_name='名称')#这里的verbose_name是列名的别名
+    price=models.IntegerField("价格")
     pub_date=models.DateField()
     publish=models.ForeignKey("Publish",on_delete=models.CASCADE)#设置级联删除，否则创建表时会报错
     authors=models.ManyToManyField("Author")
