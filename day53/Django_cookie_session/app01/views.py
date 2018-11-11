@@ -28,9 +28,36 @@
 
 
 
+# # COOKIE和SESSION配合使用
+# from django.shortcuts import render,redirect
+#
+# # Create your views here.
+#
+# def login(request):
+#     print("COOKIES",request.COOKIES)
+#     print("SESSION",request.session)
+#     if request.method=="POST":
+#         name=request.POST.get("user")
+#         pwd=request.POST.get("pwd")
+#         if name=="winchoo" and pwd=="123":
+#             #COOKIE AND SESSION
+#             request.session["is_login"]=True
+#             request.session["user"]=name
+#             return redirect("/index/")
+#
+#     return render(request,"login.html")
+#
+# def index(request):
+#     if request.session.get("is_login",None):
+#         name=request.session.get("user",None)
+#         return render(request,"index.html",locals())
+#
+#     else:
+#         return redirect("/login/")
+
 # COOKIE和SESSION配合使用
 from django.shortcuts import render,redirect
-
+import datetime
 # Create your views here.
 
 def login(request):
@@ -41,15 +68,17 @@ def login(request):
         pwd=request.POST.get("pwd")
         if name=="winchoo" and pwd=="123":
             #COOKIE AND SESSION
-            request.session["is_login"]=True
-            request.session["user"]=name
-            return redirect("/index/")
+            ret=redirect("/index/")
+            #设定cookie生存时间
+            #max_age和expires需要设定一样的值
+            ret.set_cookie("username",{"11":"22"},max_age=10,expires=datetime.datetime.utcnow()+datetime.timedelta(days=3))
+            return ret
 
     return render(request,"login.html")
 
 def index(request):
-    if request.session.get("is_login",None):
-        name=request.session.get("user",None)
+    if request.COOKIES.get("username",None):
+        name=request.COOKIES.get("username",None)
         return render(request,"index.html",locals())
 
     else:
