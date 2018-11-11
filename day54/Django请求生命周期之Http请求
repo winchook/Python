@@ -1,5 +1,56 @@
-1.发送Http请求
-2.服务器接收,根据请求头中的url在路由关系中进行匹配(从上到下)
-3.匹配成功后,执行指定的views函数
-  URL -> 函数  ==>  FBV
-  URL -> 类  ==>  CBV
+-请求响应Http
+    1.发送Http请求
+    2.服务器接收,根据请求头中的url在路由关系中进行匹配(从上到下)
+    3.匹配成功后,执行指定的views函数
+      URL -> 函数  ==>  FBV
+      URL -> 类  ==>  CBV
+    4.业务处理
+        -根据跟人需求自定制
+        -操作数据库
+            -支持原生SQL
+            -Django ORM(可能是史上最牛的ORM框架)
+        ==>返回给用户的结果<==
+        -响应内容
+            -响应头
+            -响应体
+
+请求字符串
+    请求头
+    :authority: www.cnblogs.com
+    :method: GET
+    :path: /yuanchenqi/articles/6083427.html
+    :scheme: https
+    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+    accept-encoding: gzip, deflate, br
+    accept-language: zh,zh-CN;q=0.9
+    cache-control: max-age=0
+    cookie: _ga=GA1.2.1184570219.1536162076; _gid=GA1.2.1266000736.1541834096; _gat=1
+    if-modified-since: Sun, 11 Nov 2018 13:16:52 GMT
+    upgrade-insecure-requests: 1
+    user-agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36
+
+    分隔：
+    \r\n\r\n
+
+    请求体：
+    Request URL: https://www.cnblogs.com/yuanchenqi/articles/6083427.html
+    Request Method: GET
+    Status Code: 200
+    Remote Address: 42.121.252.58:443
+    Referrer Policy: no-referrer-when-downgrade
+
+
+    响应头：
+    cache-control: private, max-age=10
+    content-encoding: gzip
+    content-type: text/html; charset=utf-8
+    date: Sun, 11 Nov 2018 13:17:09 GMT
+    expires: Sun, 11 Nov 2018 13:17:19 GMT
+    last-modified: Sun, 11 Nov 2018 13:17:09 GMT
+    server: Tengine
+    status: 200
+    vary: Accept-Encoding
+    x-ua-compatible: IE=10
+
+
+
