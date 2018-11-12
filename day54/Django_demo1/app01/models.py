@@ -7,7 +7,7 @@ class Classes(models.Model):
     """
     班级表
     """
-    titile = models.CharField(max_length=32)
+    title = models.CharField(max_length=32)
     m = models.ManyToManyField('Teachers')
 
 class Teachers(models.Model):

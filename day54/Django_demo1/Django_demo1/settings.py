@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'Django_demo1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cms',    #你的数据库名称
+        'NAME': 'school',    #你的数据库名称
         'USER': 'root',   #你的数据库用户名
         'PASSWORD': 'DtPChIBUJYMnNyqCZYDD', #你的数据库密码
         'HOST': '122.200.133.182', #你的数据库主机，留空默认为localhost
