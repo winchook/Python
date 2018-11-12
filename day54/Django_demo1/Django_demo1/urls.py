@@ -19,10 +19,16 @@ from django.conf.urls import url
 from app01.views import classes
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^classes.html$', classes.get_classes),
-    url(r'^add_classes.html$', classes.add_classes),
-    url(r'^del_classes.html$', classes.del_classes),
-    url(r'^edit_classes.html$', classes.edit_classes),
+    # url(r'^admin$', admin.site.urls),
+    # url(r'^classes.html$', classes.get_classes),
+    # url(r'^add_classes.html$', classes.add_classes),
+    # url(r'^del_classes.html$', classes.del_classes),
+    # url(r'^edit_classes.html$', classes.edit_classes),
+
+    path('admin', admin.site.urls),
+    path('classes.html/', classes.get_classes),
+    path('add_classes.html/', classes.add_classes),
+    path('del_classes.html', classes.del_classes),
+    path('edit_classes.html', classes.edit_classes),
 
 ]

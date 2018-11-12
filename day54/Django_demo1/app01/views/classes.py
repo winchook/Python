@@ -21,11 +21,11 @@ def del_classes(request):
 def edit_classes(request):
     if request.method == 'GET':
         nid = request.GET.get('nid')
-        #这里的obj如果有就是对象，如果没有就是None
+        # 这里的obj如果有就是对象，如果没有就是None
         obj = models.Classes.objects.filter(id=nid).first()
-        return render(request,'edit_classes.html',{'obj':obj})
+        return render(request, 'edit_classes.html',{'obj':obj})
     elif request.method == 'POST':
         nid = request.GET.get('nid')
-        title = request.POST.get('edit')
-        models.Classes.objects.first(id=nid).update(title=title)
+        title = request.POST.get('xxoo')
+        models.Classes.objects.filter(id=nid).update(title=title)
         return redirect('/classes.html')
