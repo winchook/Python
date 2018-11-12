@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from app01.views import classes
+from app01.views import students
 
 urlpatterns = [
     # url(r'^admin$', admin.site.urls),
@@ -30,5 +31,8 @@ urlpatterns = [
     path('add_classes.html/', classes.add_classes),
     path('del_classes.html', classes.del_classes),
     path('edit_classes.html', classes.edit_classes),
-
+    path('students.html', students.get_students),
+    path('add_students.html', students.add_students),
+    path('del_students.html', students.del_students),
+    url(r'^edit_students.html$', students.edit_students),
 ]
