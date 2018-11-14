@@ -1,0 +1,220 @@
+from django.db import models
+
+
+
+# 单表操作
+# 老师表里面创建一条记录
+# 1.
+# Teachers.objects.create(nama='root')
+# 2.
+# obj = Teachers(name='root')
+# obj.save()
+# 从老师表里面获取全部数据
+# Teachers.objects.all()
+# 从老师表里面获取id=1的数据
+# Teachers.objects.filter(id=1)
+# 从老师表里面获取id=1并且name='root'的数据
+# Teachers.objects.filter(id=1,name='root')
+# 从老师表里面获取id大于1的数据
+# result = Teachers.objects.filter(id__gt=1)#列表里面是一个个的Teacher对象[obj(id,name)]
+# 从老师表里面获取id大于1的数据的第一个
+# Teachers.objects.filter(id__gt=1).first()
+# 从老师表里面删除id=1的数据
+# Teachers.objects.filter(id=1).delete()
+# 将老师表里面所有的名字更新为winchoo
+# Teachers.objects.all().update(name='winchoo')
+# 将老师表里面id=1的名字更新为winchoo
+# Teachers.objects.all(id=1).update(name='winchoo')
+
+
+#自己手动创建第三张表来保存班级表及老师表的关系
+# class C2T(models.Model):
+# #     """
+# #     cid_id tid_id
+# #     1   1
+# #     1   2
+# #     6   1
+# #     要求cid只能是Classes表中的，而tid只能是Teachers表中的
+# #     """
+# #     cid = models.ForeignKey(Classes)
+# #     tid = models.ForeignKey(Teachers)
+
+#在Django中提供了ManyToManyField来自动创建的，加在Classes或者Teachers中都可以
+
+
+
+"""
+班级：
+id    name
+1     3班
+1     6班
+
+id    username    age    gender    cs_id
+1     winchoo     23     男         1
+
+"""
+
+"""
+增加数据
+第一种方式,简单高效,常用的方法
+Student.objects.create(username='chason',age=18,gender='男',cs_id=1)
+第二种方式,数据库多了一次查询的操作
+Student.objects.create(username='chason',age=18,gender='男',cs=Classes.objects.filter(id=1).first())
+"""
+
+
+"""
+查询数据
+ret = Student.objects.all()
+for item in ret:
+    print(item.id)
+    print(item.username)
+    print(item.age)
+    print(item.gender)
+    print(item.cs_id)
+    #或者
+    print(item.cs.id)#这里要特别注意，只要见到ForeignKey，针对所有的字段就可以直接做跨表操作，有特异功能
+    print(item.cs.name)#这里要特别注意，只要见到ForeignKey，针对所有的字段就可以直接做跨表操作，有特异功能
+"""
+
+
+"""
+删除数据
+Student.objects.filter(id=1).delete()
+Student.objects.filter(cs_id=1).delete()
+cid = input('请输入班级ID')
+Student.objects.filter(cs_id=cid).delete()
+
+cid=input('请输入班级名称')
+Student.objects.filter(cs__name=cid).delete()#filter要跨表就需要用双下划线来做
+"""
+
+
+
+
+
+
+
+
+
+
+班级：
+id    name
+ 1    3班
+ 2    6班
+
+class School:
+    name = models.CharField(max_length=32)
+
+
+class Classes(models.Model):
+    """
+    班级表,男
+    """
+    titile = models.CharField(max_length=32)
+    # m = models.ManyToManyField('Teachers')      # 多对多
+    # sch = models.ForeignKey(School)
+
+老师：
+id   title
+ 1    张三
+ 2    李四
+ 3    王五
+ 4    winchoo
+class Teachers(models.Model):
+    """
+    老师表，女
+    """
+    name = models.CharField (max_length=32)
+
+学生
+id   username    age    gender   cs_id
+1      东北       18     男         1
+2      东北1      118     男        2
+2      东北1      118     男        1
+class Student(models.Model):
+    """
+    学生表
+    """
+    username = models.CharField(max_length=32)
+    age = models.IntegerField()
+    gender = models.BooleanField()
+    cs = models.ForeignKey(Classes) #
+
+
+示例：
+    - 所有学生的姓名以及其所在班级名称,QuerySet
+        stu_list = Student.objects.all()
+        select * from tb;
+        [obj,obj,obj,obj]
+        #这种方式是对象
+
+        stu_list = Student.objects.all().values("id",'username')#只会显示id,username
+        select id,username from tb;
+        [{"id":1,'username':'xx'},{id:'',username:''}]
+        #这种方式是字典
+
+        stu_list = Student.objects.all().values_list("id",'username')
+        [(1,'root'), (2,'李四')]
+        #这种方式是元组
+
+
+        stu_list = Student.objects.all().values('username',"cs__name")
+        for row in stu_list:
+            print(row['username'],row['cs__name'])#value方式的是字典，所以要使用索引来取
+
+        stu_list = Student.objects.all().values('username',"cs__titile","cs__fk__name")
+
+    - 找到3班的所有学生
+        Student.objects.filter(cs__name='3班')
+
+        obj = Classes.objects.filter(name='3班').first()
+
+
+1. 类代表数据库表
+2. 类的对象代指数据库的一行记录
+3. FK字段代指关联表中的一行数据（类的对象）
+4.
+    - 正向：fk字段  (*****)
+    - 反向：小写类名_set(默认)   ==> related_name='ssss'
+
+5. 谁是主表？就全部列出其数据
+    models.Student.objects.all().values('username', 'cs__titile')
+    models.Classes.objects.all().values('titile', 'ssss__username')
+
+4. M2M字段，自动生成第三张表；依赖关联表对第三张表间接操作
+
+
+对话框添加，删除，修改：
+    添加：
+        Ajax偷偷向后台发请求：
+            1. 下载引入jQuery
+            2.
+                $.ajax({
+                    url: '/add_classes.html',
+                    type: 'POST',
+                    data: {'username':'root','password': '123'},
+                    success:function(arg){
+                        // 回调函数，arg是服务端返回的数据
+                    }
+                })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
