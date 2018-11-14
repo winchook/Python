@@ -187,7 +187,7 @@ class Student(models.Model):
 
 对话框添加，删除，修改：
     添加：
-        向后台发请求：
+        Ajax偷偷向后台发请求：
             1. 下载引入jQuery
             2.
                 $.ajax({

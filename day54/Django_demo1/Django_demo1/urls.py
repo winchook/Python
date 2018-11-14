@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import url
 from app01.views import classes
 from app01.views import students
+from app01.views import ajax
 
 urlpatterns = [
     # url(r'^admin$', admin.site.urls),
@@ -39,4 +40,8 @@ urlpatterns = [
     path('del_students.html', students.del_students),
     url(r'^edit_students.html$', students.edit_students),
 
+    url(r'^ajax1.html$', ajax.ajax1),
+    url(r'^ajax2.html$', ajax.ajax2),
+    url(r'^ajax3.html$', ajax.ajax3),
+    url(r'^ajax4.html$', ajax.ajax4),
 ]
