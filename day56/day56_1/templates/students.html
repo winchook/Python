@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div style="padding:20px 0;">
+        <a class="btn btn-primary">添加</a>
+        <a class="btn btn-danger">删除</a>
+    </div>
+
+    <div>
+        <table class="table table-bordered table-striped">
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>班级</th>
+			<th>操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+            <td>
+                <a class="glyphicon glyphicon-remove"></a>
+                <a class="glyphicon glyphicon-ok"></a>
+            </td>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+			<td>a</td>
+            <td>
+                <a class="glyphicon glyphicon-remove"></a>
+                <a class="glyphicon glyphicon-ok"></a>
+            </td>
+		</tr>
+        {% for row in stu_list %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.username }}</td>
+                <td>{{ row.age }}</td>
+                <td>{{ row.gender }}</td>
+                <td>{{ row.cs.title }}</td>
+                <td>
+                    <a>删除</a>
+                    <a>编辑</a>
+                </td>
+            </tr>
+        {% endfor %}
+		</tbody>
+	</table>
+    </div>
+</div>
+
+</body>
+</html>
