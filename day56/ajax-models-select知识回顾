@@ -1,0 +1,38 @@
+1.ajax写法
+
+$.ajax({
+	url:'/index/',
+	type:'GET',
+	data:{'k1':'v1'},
+	success:function(arg){
+
+	}
+})
+
+
+2.Models操作
+a.
+	类->数据库的表
+	字段 -> 一列
+	对象 -> 一行数据
+	class UserInfo:
+		username=models.CharField(...)
+
+b.
+	- 单表
+	- 一对多(FK代指关系表中的一行数据：__跨表)
+	- 多对多(M2M字段)
+
+c.
+	数据库获取数据
+		- [obj,obj]对象 -->  .all,.filter
+		- [{},{}]列表  -->  .values
+		- [(),()]  -->  .values_list
+
+3.select标签：
+	- 单选
+		$().val()
+		$().val(2)
+	- 多选
+		$().val()
+		$().val([1,2,3])
