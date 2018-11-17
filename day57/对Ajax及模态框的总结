@@ -58,7 +58,7 @@
                     // arg是对象
                 }
             })
-        b. 包含属组
+        b. 包含数组
             $.ajax({
                 url: 'http//www.baidu.com',
                 type: 'GET',
@@ -72,7 +72,7 @@
 
         c. 传字典
 
-            b. 包含属组
+            b. 包含数组
             $.ajax({
                 url: 'http//www.baidu.com',
                 type: 'GET',
