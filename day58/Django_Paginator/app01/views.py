@@ -18,4 +18,8 @@ def index(request):
 
     #将数据切片
     data = USER_LIST[start:end]
-    return render(request,'index.html',{'user_list':data})
+
+    prev_pager = current_page - 1
+    next_pager = current_page + 1
+
+    return render(request,'index.html',{'user_list':data,'pre_pager':prev_pager,'next_pager':next_pager})
