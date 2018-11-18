@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 #生成大量数据至网页显示
 USER_LIST = []
-for i in range(1,999):#由于数据库是从1开始，所以直接从1开始
+for i in range(1,666):#由于数据库是从1开始，所以直接从1开始
     temp = {'name':'root'+str(i),'age':i}
     USER_LIST.append(temp)
 
@@ -77,3 +77,11 @@ def index1(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
     return render(request,'index1.html',{'posts':posts})
+
+def index2(request):
+    from app01.pager import Pagination
+    current_page = request.GET.get('p')
+    page_obj = Pagination(666,current_page)
+
+    data_list = USER_LIST[page_obj.start():page_obj.end()]
+    return render(request,'index2.html',{'data':data_list,'page_obj':page_obj})
