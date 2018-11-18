@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 #生成大量数据至网页显示
@@ -25,10 +25,34 @@ def index(request):
 
     return render(request,'index.html',{'user_list':data,'pre_pager':prev_pager,'next_pager':next_pager})
 
+#自定义分页
+class CustomPaginator(Paginator):
+    def __init__(self,current_page, per_pager_num,*args,**kwargs):
+        # 当前页
+        self.current_page = int(current_page)
+        # 最多显示的页码数量 11
+        self.per_pager_num = int(per_pager_num)
+        super(CustomPaginator,self).__init__(*args,**kwargs)
+    def pager_num_range(self):
+        # 当前页
+        #self.current_page
+        # 最多显示的页码数量 11
+        #self.per_pager_num
+        # 总页数
+        # self.num_pages
+        if self.num_pages < self.per_pager_num:
+            return range(1,self.num_pages+1)
+        # 总页数特别多 5
+        part = int(self.per_pager_num/2)
+        if self.current_page <= part:
+            return range(1,self.per_pager_num+1)
+        if (self.current_page + part) > self.num_pages:
+            return range(self.num_pages-self.per_pager_num+1,self.num_pages+1)
+        return range(self.current_page-part,self.current_page+part+1)
+
 #Django内置的分页
 def index1(request):
     #引入Django分页模块
-    from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
     #全部数据:USER_LIST, =>得出共有多少条数据
     # per_page: 每页显示条目数量
     # count:    数据总个数
@@ -37,7 +61,7 @@ def index1(request):
     # page:     page对象
     current_page = request.GET.get('p')
     #创建paginator对象
-    paginator = Paginator(USER_LIST,10)
+    paginator = CustomPaginator(current_page,7,USER_LIST, 10)
     try:
         posts = paginator.page(current_page)
         # posts里面将会包含如下值
