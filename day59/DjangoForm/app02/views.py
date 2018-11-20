@@ -69,13 +69,20 @@ class TestForm(forms.Form):
         initial=[1,3],
     )
 
-    #多选框的两种写法
+    #下拉单选框的两种写法
     selectA = fields.CharField(
-        widget = widgets.Select(choices=[(1,'winchoo'),(2,'chason'),(3,'张三')])
+        widget = widgets.Select(choices=[(1,'winchoo'),(2,'chason'),(3,'张三')]),
     )
     selectB = fields.ChoiceField(
-        choices=[(1,'winchoo'),(2,'chason'),(3,'张三')]
+        choices=[(1,'winchoo'),(2,'chason'),(3,'张三')],
     )
+
+    #下拉多选框的写法
+    Multiselect = fields.MultipleChoiceField(
+        choices=[(1,'winchoo'),(2,'chason'),(3,'张三')],
+        widget=widgets.SelectMultiple(attrs={'class':'c1'}),#这里的class是自定义属性
+    )
+
 
 def test(request):
     if request.method == 'GET':
