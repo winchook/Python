@@ -69,6 +69,14 @@ class TestForm(forms.Form):
         initial=[1,3],
     )
 
+    #多选框的两种写法
+    selectA = fields.CharField(
+        widget = widgets.Select(choices=[(1,'winchoo'),(2,'chason'),(3,'张三')])
+    )
+    selectB = fields.ChoiceField(
+        choices=[(1,'winchoo'),(2,'chason'),(3,'张三')]
+    )
+
 def test(request):
     if request.method == 'GET':
         # obj = TestForm({'city':3})#整体加默认值
