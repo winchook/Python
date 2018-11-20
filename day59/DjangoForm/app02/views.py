@@ -115,14 +115,20 @@ def test(request):
         return render(request, 'test.html', {'obj': obj})
 
 from app01 import models
-
+from django.forms.models import ModelChoiceField
 class SkillForm(forms.Form):
     skill = fields.IntegerField()
     user_id = fields.IntegerField(
         widget=widgets.Select()
     )
 
+    #默认无法显示中文，了解即可，不常用
+    user_id2 = ModelChoiceField(
+        queryset = models.UserInfo.objects.all(),
+        to_field_name ='id',#以那一列作为value放到option里面
+    )
     #自定义的这块功能是实现自动从数据库加载，创建对象时执行这个初始化函数
+    #极其常用
     def __init__(self,*args,**kwargs):
         #super必须在self.fields上面执行，因为super会先拷贝所有的静态字段，复制给self.fields
         #非常重要
