@@ -32,11 +32,51 @@ class TestForm(forms.Form):
         label='邮箱',
     )
 
+    #上传文件
+    # 注：需要PIL模块，Pillow
+    # 以上两个字典使用时，需要注意两点：
+    # - form表单中
+    # enctype = "multipart/form-data"
+    # - view函数中
+    # obj = MyForm(request.POST, request.FILES)
+
+    img = fields.FileField(
+        label='上传文件',
+    )
+
+    # city = fields.ChoiceField(
+    #     label='城市',
+    #     #数据源写在choices里面即可
+    #     choices=[(1,'天津'),(2,'北京'),(3,'陕西')],
+    #     #下拉框里面的默认值设定
+    #     initial = 3,
+    # )
+
+    city = fields.TypedChoiceField(
+        label='Typed城市',
+        #接收一个参数，将该参数转换为int再返回
+        coerce=lambda x:int(x),
+        #数据源写在choices里面即可
+        choices=[(1,'天津'),(2,'北京'),(3,'陕西')],
+        #下拉框里面的默认值设定
+        initial = 3,
+    )
+
+    hobby = fields.MultipleChoiceField(
+        label='爱好',
+        choices=[(1,'爬山'),(2,'阅读'),(3,'健身')],
+        #默认值多个，所以可以写列表
+        initial=[1,3],
+    )
+
 def test(request):
     if request.method == 'GET':
+        # obj = TestForm({'city':3})#整体加默认值
+        # obj = TestForm({'hobby':[1,3]})#整体加默认值
         obj = TestForm()
         return render(request,'test.html',{'obj':obj})
     else:
-        obj = TestForm(request.POST)
+        obj = TestForm(request.POST, request.FILES)
         obj.is_valid()
+        print(obj.cleaned_data)
         return render(request, 'test.html', {'obj': obj})
