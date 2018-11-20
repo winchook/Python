@@ -95,6 +95,12 @@ class TestForm(forms.Form):
         widget=widgets.CheckboxSelectMultiple,
     )
 
+    #单选RadioSelect
+    Radioselect = fields.ChoiceField(
+        choices=((1,'马来西亚'),(2,'美国'),(3,'日本')),
+        initial=2,
+        widget=widgets.RadioSelect,
+    )
 
 def test(request):
     if request.method == 'GET':
