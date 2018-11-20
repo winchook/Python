@@ -83,6 +83,18 @@ class TestForm(forms.Form):
         widget=widgets.SelectMultiple(attrs={'class':'c1'}),#这里的class是自定义属性
     )
 
+    #单选框checkbox
+    checkboxuser = fields.CharField(
+        widget=widgets.CheckboxInput(),
+    )
+
+    #多选框checkbox
+    Multicheckbox = fields.MultipleChoiceField(
+        initial=[2,'winchoo'],
+        choices=((1,'chason'),(2,'winchoo'),(3,'Milton')),
+        widget=widgets.CheckboxSelectMultiple,
+    )
+
 
 def test(request):
     if request.method == 'GET':
