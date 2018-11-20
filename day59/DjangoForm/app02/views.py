@@ -113,3 +113,20 @@ def test(request):
         obj.is_valid()
         print(obj.cleaned_data)
         return render(request, 'test.html', {'obj': obj})
+
+from app01 import models
+
+class SkillForm(forms.Form):
+    skill = fields.IntegerField()
+    user_id = fields.IntegerField(
+        widget=widgets.Select()
+    )
+
+    #自定义的这块功能是实现自动从数据库加载，创建对象时执行这个初始化函数
+    def __init__(self,*args,**kwargs):
+        super(SkillForm,self).__init__(*args,**kwargs)
+        self.fields['user_id'].widget.choices = models.UserInfo.objects.values_list('id','username')
+
+def skill(request):
+    obj = SkillForm()
+    return render(request,'skill.html',{'obj':obj})

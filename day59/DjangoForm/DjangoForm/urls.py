@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^add_user', views.add_user),
     url(r'^edit_user-(\d+)$', views.edit_user),
     url(r'^test', v2.test),
+    url(r'^skill', v2.skill),
 ]
