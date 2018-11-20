@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 from app01 import views
+from app02 import views as v2
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^users/', views.users),
-    url(r'^add_user/', views.add_user),
+    url(r'^users', views.users),
+    url(r'^add_user', views.add_user),
     url(r'^edit_user-(\d+)$', views.edit_user),
+    url(r'^test', v2.test),
 ]

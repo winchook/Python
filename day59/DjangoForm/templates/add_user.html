@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/add_user" method="post" novalidate>
+    <form action="/add_user/" method="post" novalidate>
         {% csrf_token %}
         <p>{{ obj.username }}{{ obj.errors.username.0 }}</p>
         <p>{{ obj.email }}{{ obj.errors.email.0 }}</p>
