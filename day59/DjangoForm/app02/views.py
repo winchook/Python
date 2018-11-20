@@ -124,6 +124,8 @@ class SkillForm(forms.Form):
 
     #自定义的这块功能是实现自动从数据库加载，创建对象时执行这个初始化函数
     def __init__(self,*args,**kwargs):
+        #super必须在self.fields上面执行，因为super会先拷贝所有的静态字段，复制给self.fields
+        #非常重要
         super(SkillForm,self).__init__(*args,**kwargs)
         self.fields['user_id'].widget.choices = models.UserInfo.objects.values_list('id','username')
 
