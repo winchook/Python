@@ -141,10 +141,21 @@ def skill(request):
 
 
 class AjaxForm(forms.Form):
-    skill = fields.IntegerField()
+    username = fields.IntegerField()
     user_id = fields.IntegerField(
         widget=widgets.Select(choices=[(0,'winchoo'),(1,'chason'),(2,'milton'),])
     )
+
+    #自定义方法 clean_字段名
+    #必须有返回值，且返回值是当前值self.cleaned_data['username']
+    #如果出错：则直接raise ValidationErrow('用户名已存在')
+    def clean_username(self):
+        v = self.cleaned_data['username']
+        if models.UserInfo.objects.filter(username=v).count():
+            raise ValidationErrow('用户名已存在')
+        return v
+    def clean_user_id(self):
+        return self.cleaned_data['user_id']
 
 def ajax(request):
     if request.method == 'GET':
