@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.conf.urls import url
 from app01 import views
 from app02 import views as v2
+from app03 import views as v3
 
 
 urlpatterns = [
@@ -27,4 +28,6 @@ urlpatterns = [
     url(r'^test', v2.test),
     url(r'^skill', v2.skill),
     url(r'^ajax', v2.ajax),
+    url(r'^serialization', v3.serialization),
+    url(r'^get_data', v3.get_data),
 ]
