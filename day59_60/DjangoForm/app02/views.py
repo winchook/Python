@@ -114,6 +114,9 @@ def test(request):
         print(obj.cleaned_data)
         return render(request, 'test.html', {'obj': obj})
 
+
+
+
 from app01 import models
 from django.forms.models import ModelChoiceField
 class SkillForm(forms.Form):
@@ -140,8 +143,12 @@ def skill(request):
     return render(request,'skill.html',{'obj':obj})
 
 
+
+
+
+from django.core.exceptions import NON_FIELD_ERRORS, ValidationError
 class AjaxForm(forms.Form):
-    username = fields.IntegerField()
+    username = fields.CharField()
     user_id = fields.IntegerField(
         widget=widgets.Select(choices=[(0,'winchoo'),(1,'chason'),(2,'milton'),])
     )
@@ -156,6 +163,14 @@ class AjaxForm(forms.Form):
         return v
     def clean_user_id(self):
         return self.cleaned_data['user_id']
+
+    def clean(self):
+        value_dict = self.cleaned_data
+        v1 = value_dict.get('username')
+        v2 = value_dict.get('user_id')
+        if v1 == 'root' and v2==1:
+            raise ValidationError('整体错误信息')
+        return self.cleaned_data
 
 def ajax(request):
     if request.method == 'GET':
@@ -181,6 +196,13 @@ def ajax(request):
             # print(obj.errors.as_ul())
             # print(obj.errors.as_json())
             # print(obj.errors.as_data())
+
+            """
+            {
+               __all__: [],
+               username:[]
+            }
+            """
             ret['message'] = obj.errors
             #<class 'django.forms.utils.ErrorDict'>
             #如果是错误的，错误信息显示在页面上
