@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^edit_user-(\d+)$', views.edit_user),
     url(r'^test', v2.test),
     url(r'^skill', v2.skill),
+    url(r'^ajax', v2.ajax),
 ]

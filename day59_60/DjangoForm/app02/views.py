@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,HttpResponse
 from django import forms
 from django.forms import fields
 from django.forms import widgets
@@ -138,3 +138,40 @@ class SkillForm(forms.Form):
 def skill(request):
     obj = SkillForm()
     return render(request,'skill.html',{'obj':obj})
+
+
+class AjaxForm(forms.Form):
+    skill = fields.IntegerField()
+    user_id = fields.IntegerField(
+        widget=widgets.Select(choices=[(0,'winchoo'),(1,'chason'),(2,'milton'),])
+    )
+
+def ajax(request):
+    if request.method == 'GET':
+        obj = AjaxForm()
+        return render(request,'ajax.html',{'obj':obj})
+    else:
+        ret = {'status':'winchoo','message':None}
+        import json
+        obj = AjaxForm(request.POST)
+        #验证输入的有效性
+        if obj.is_valid():
+            print(obj.cleaned_data)
+            #如果是正确的跳转到GitHub，Ajax不能使用此方式
+            # return redirect('https://github.com')
+            #Ajax必须使用如下方式
+            ret['status']='钱'
+            return HttpResponse(json.dumps(ret))
+        else:
+            # print(obj.errors)
+            #这里的ErrorDict将原来的字典转换为各种各样的数据类型
+            #<ul class="errorlist"><li>skill<ul class="errorlist"><li>This field is required.</li></ul></li></ul>
+            # from django.forms.utils import ErrorDict
+            # print(obj.errors.as_ul())
+            # print(obj.errors.as_json())
+            # print(obj.errors.as_data())
+            ret['message'] = obj.errors
+            #<class 'django.forms.utils.ErrorDict'>
+            #如果是错误的，错误信息显示在页面上
+
+            return HttpResponse(json.dumps(ret))
