@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="user" />
+        <div style="position: relative">
+            <a>NB上传</a>
+{#            opacity: 0透明度调节为0就可以遮挡掉原来的选择文件字样#}
+            <input type="file" name="img" style="opacity: 0;position:absolute;top:0;left: 0;" />
+        </div>
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>
