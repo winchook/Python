@@ -1,0 +1,73 @@
+内容回顾：
+    1.ajax参数
+
+        url:
+        type:
+        data:
+            1. value不能是字典 {k1:'v1',k2:[1,2,3,],k3: JSON.stringify({})}
+            2. $('').serilizer()
+        dataType:"JSON",# text,html,xml
+        单词太长了 traditional：
+        success:function(arg){
+            # arg=>obj
+        },
+        error:function(){
+
+        }
+    2. 序列化
+        JavaScript:
+            JSON.parse()
+            JSON.stringify()
+
+        Django:
+            json.dumps()
+            json.loads()
+            问题：
+                serilize:  model.TB.objects.all()
+
+                json:  list(model.TB.objects.values())
+                json:  list(model.TB.objects.values_list())
+
+
+    3. Form
+        作用：用于验证+（生成HTML+保存上次提交的数据）
+        使用：
+            1.创建类
+            2.创建字段（）
+            3. 验证用户输入：
+                obj = Form(request.POST,request.FILES)
+                if obj.is_valid():
+                    obj.cleaned_data
+                else:
+                    obj.errors
+            4. clean_字段
+
+            5. clean()  _post_clean()
+
+            PS: __all__
+
+
+    4. 分页组件
+
+        a. 内置
+        b. 扩展
+        c. 自定义
+
+    5. XSS攻击
+        跨站脚本攻击：
+
+        防止：
+            - 其他人输入的内容     不用safe
+            - 自己输入的内容       可用safe
+
+
+        <script>
+            for(var i=0;i<9999;i++){
+                alert(i)
+            }
+        </script>
+
+
+        <script>
+            获取本地cookie，发送到另外一个网站
+        </script>
