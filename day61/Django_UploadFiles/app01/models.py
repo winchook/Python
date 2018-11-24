@@ -33,10 +33,16 @@ from django.db import models
 #         related_query_name='b',# 反向操作时，使用的连接前缀，用于替换【表名】     如： models.UserGroup.objects.filter(表名__字段名=1).values('表名__字段名')
 #     )
 
+# ################使用自定义第三张表来表示多对多#########
 class User(models.Model):
     username = models.CharField(max_length=32,db_index=True)
     def __str__(self):
         return self.username
+
+#创建的自关联表，在博客园时的互粉功能使用
+class Date(models.Model):
+    u1 = models.IntegerField()
+    u2 = models.IntegerField()
 
 class Tag(models.Model):
     title = models.CharField(max_length=16)
@@ -53,3 +59,31 @@ class UserToTag(models.Model):
         unique_together=[
             ('u','t'),
         ]
+# #############################################
+
+################【不建议联合起来使用】使用自定义第三张表来表示多对多#########
+# class User(models.Model):
+#     username = models.CharField(max_length=32,db_index=True)
+#     def __str__(self):
+#         return self.username
+#
+# class Tag(models.Model):
+#     title = models.CharField(max_length=16)
+#     def __str__(self):
+#         return self.title
+#     m=models.ManyToManyField(
+#         to='User',
+#         through='UserToTag',# 自定义第三张表时，使用字段用于指定关系表
+#         through_fields=['u','t'],# 自定义第三张表时，使用字段用于指定关系表中那些字段做多对多关系表
+#     )
+#
+# class UserToTag(models.Model):
+#     u = models.ForeignKey(to='User',on_delete=models.CASCADE)
+#     t = models.ForeignKey(to='Tag',on_delete=models.CASCADE)
+#     ctime = models.DateField()
+#     class Meta:#一起唯一
+#         unique_together=[
+#             ('u','t'),
+#         ]
+#############################################
+
