@@ -33,12 +33,22 @@ from django.db import models
 #     )
 
 class User(models.Model):
-    username = models.CharField(max_length=32,db_index=True),
-    par = models.ForeignKey(
-        to='Part',
-        to_field='id',
-        on_delete=models.CASCADE,
-    ),
+    username = models.CharField(max_length=32,db_index=True)
+    def __str__(self):
+        return self.username
 
-class Part(models.Model):
-    caption = models.CharField(max_length=21),
+class Tag(models.Model):
+    title = models.CharField(max_length=16)
+    def __str__(self):
+        return self.title
+    # 使用ManyToManyField只能在第三张表中创建三列数据
+
+class UserToTag(models.Model):
+    # nid = models.AutoField(primary_key=True)
+    u = models.ForeignKey(to='User',on_delete=models.CASCADE)
+    t = models.ForeignKey(to='Tag',on_delete=models.CASCADE)
+    ctime = models.DateField()
+    class Meta:#一起唯一
+        unique_together=[
+            ('u','t'),
+        ]
