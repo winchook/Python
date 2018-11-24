@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+#元信息
 # class UserInfo(models.Model):
 #     username = models.CharField(
 #         null = True,

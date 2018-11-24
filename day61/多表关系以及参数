@@ -1,0 +1,108 @@
+ForeignKey(ForeignObject) # ForeignObject(RelatedField)
+        to,                         # 要进行关联的表名
+        to_field=None,              # 要关联的表中的字段名称
+        on_delete=None,             # 当删除关联表中的数据时，当前表与其关联的行的行为
+                                        - models.CASCADE，删除关联数据，与之关联也删除
+                                        - models.DO_NOTHING，删除关联数据，引发错误IntegrityError
+                                        - models.PROTECT，删除关联数据，引发错误ProtectedError
+                                        - models.SET_NULL，删除关联数据，与之关联的值设置为null（前提FK字段需要设置为可空）
+                                        - models.SET_DEFAULT，删除关联数据，与之关联的值设置为默认值（前提FK字段需要设置默认值）
+                                        - models.SET，删除关联数据，
+                                                      a. 与之关联的值设置为指定值，设置：models.SET(值)
+                                                      b. 与之关联的值设置为可执行对象的返回值，设置：models.SET(可执行对象)
+
+                                                        def func():
+                                                            return 10
+
+                                                        class MyModel(models.Model):
+                                                            user = models.ForeignKey(
+                                                                to="User",
+                                                                to_field="id"
+                                                                on_delete=models.SET(func),)
+        related_name=None,          # 反向操作时，使用的字段名，用于代替 【表名_set】 如： obj.表名_set.all()
+        related_query_name=None,    # 反向操作时，使用的连接前缀，用于替换【表名】     如： models.UserGroup.objects.filter(表名__字段名=1).values('表名__字段名')
+        limit_choices_to=None,      # 在Admin或ModelForm中显示关联数据时，提供的条件：
+                                    # 如：
+                                            - limit_choices_to={'nid__gt': 5}
+                                            - limit_choices_to=lambda : {'nid__gt': 5}
+
+                                            from django.db.models import Q
+                                            - limit_choices_to=Q(nid__gt=10)
+                                            - limit_choices_to=Q(nid=8) | Q(nid__gt=10)
+                                            - limit_choices_to=lambda : Q(Q(nid=8) | Q(nid__gt=10)) & Q(caption='root')
+        db_constraint=True          # 是否在数据库中创建外键约束
+        parent_link=False           # 在Admin中是否显示关联数据
+
+
+    OneToOneField(ForeignKey)
+        to,                         # 要进行关联的表名
+        to_field=None               # 要关联的表中的字段名称
+        on_delete=None,             # 当删除关联表中的数据时，当前表与其关联的行的行为
+
+                                    ###### 对于一对一 ######
+                                    # 1. 一对一其实就是 一对多 + 唯一索引
+                                    # 2.当两个类之间有继承关系时，默认会创建一个一对一字段
+                                    # 如下会在A表中额外增加一个c_ptr_id列且唯一：
+                                            class C(models.Model):
+                                                nid = models.AutoField(primary_key=True)
+                                                part = models.CharField(max_length=12)
+
+                                            class A(C):
+                                                id = models.AutoField(primary_key=True)
+                                                code = models.CharField(max_length=1)
+
+    ManyToManyField(RelatedField)
+        to,                         # 要进行关联的表名
+        related_name=None,          # 反向操作时，使用的字段名，用于代替 【表名_set】 如： obj.表名_set.all()
+        related_query_name=None,    # 反向操作时，使用的连接前缀，用于替换【表名】     如： models.UserGroup.objects.filter(表名__字段名=1).values('表名__字段名')
+        limit_choices_to=None,      # 在Admin或ModelForm中显示关联数据时，提供的条件：
+                                    # 如：
+                                            - limit_choices_to={'nid__gt': 5}
+                                            - limit_choices_to=lambda : {'nid__gt': 5}
+
+                                            from django.db.models import Q
+                                            - limit_choices_to=Q(nid__gt=10)
+                                            - limit_choices_to=Q(nid=8) | Q(nid__gt=10)
+                                            - limit_choices_to=lambda : Q(Q(nid=8) | Q(nid__gt=10)) & Q(caption='root')
+        symmetrical=None,           # 仅用于多对多自关联时，symmetrical用于指定内部是否创建反向操作的字段
+                                    # 做如下操作时，不同的symmetrical会有不同的可选字段
+                                        models.BB.objects.filter(...)
+
+                                        # 可选字段有：code, id, m1
+                                            class BB(models.Model):
+
+                                            code = models.CharField(max_length=12)
+                                            m1 = models.ManyToManyField('self',symmetrical=True)
+
+                                        # 可选字段有: bb, code, id, m1
+                                            class BB(models.Model):
+
+                                            code = models.CharField(max_length=12)
+                                            m1 = models.ManyToManyField('self',symmetrical=False)
+
+        through=None,               # 自定义第三张表时，使用字段用于指定关系表
+        through_fields=None,        # 自定义第三张表时，使用字段用于指定关系表中那些字段做多对多关系表
+                                        from django.db import models
+
+                                        class Person(models.Model):
+                                            name = models.CharField(max_length=50)
+
+                                        class Group(models.Model):
+                                            name = models.CharField(max_length=128)
+                                            members = models.ManyToManyField(
+                                                Person,
+                                                through='Membership',
+                                                through_fields=('group', 'person'),
+                                            )
+
+                                        class Membership(models.Model):
+                                            group = models.ForeignKey(Group, on_delete=models.CASCADE)
+                                            person = models.ForeignKey(Person, on_delete=models.CASCADE)
+                                            inviter = models.ForeignKey(
+                                                Person,
+                                                on_delete=models.CASCADE,
+                                                related_name="membership_invites",
+                                            )
+                                            invite_reason = models.CharField(max_length=64)
+        db_constraint=True,         # 是否在数据库中创建外键约束
+        db_table=None,              # 默认创建第三张表时，数据库中表的名称
