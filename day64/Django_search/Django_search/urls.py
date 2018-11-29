@@ -20,6 +20,8 @@ from app01 import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^imgs.html$', views.imgs),
+    url(r'^get_imgs.html$', views.get_imgs),
     url(r'^video-(?P<classification_id>(\d+))-(?P<level_id>(\d+))-(?P<status>(\d+)).html$', views.video),
-    url(r'^video2-(?P<direction_id>(\d+))-(?P<classification_id>(\d+))-(?P<level_id>(\d+)).html$', views.video2),
+    url(r'^video2-(?P<direction_id>(\d+))-(?P<classification_id>(\d+))-(?P<level_id>(\d+)).html$', views.video2,name='video2'),
 ]

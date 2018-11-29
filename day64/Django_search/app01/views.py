@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
+from django.http import JsonResponse
 from app01 import models
+import json
 
 def video(request,*args,**kwargs):
     condition = {
@@ -73,6 +75,7 @@ def video2(request,*args,**kwargs):
                 condition['classification_id'] = classification_id
             else:
                 #################指定方向：[1,2,3]   分类：5
+                kwargs['classification_id'] = 0
                 condition['classification_id__in'] = classification_id_list
 
     if level_id == 0:
@@ -91,32 +94,51 @@ def video2(request,*args,**kwargs):
             'direction_list':direction_list,
             'class_list':class_list,
             'level_list':level_list,
-            'video_list':video_list
+            'video_list':video_list,
+            'kwargs':kwargs,
 
         }
     )
-    """
-    如果：direction_id 0
-        *列出所有的分类
-        如果 classification_id = 0：
-            pass
-        else:
-            condition['classification_id'] = classification_id
-
-    否则：direction_id != 0
-        *列表当前方向下的所有分类
-         如果 classification_id = 0：
-            获取当前方向下的所有分类 [1,2,3,4]
-            condition['classification_id__in'] = [1,2,3,4]
-         else:
-            classification_id != 0
-            获取当前方向下的所有分类 [1,2,3,4]
-            classification_id 是否在 [1,2,3,4]  :
-                condition['classification_id'] = classification_id
-            else:
-                condition['classification_id__in'] = [1,2,3,4]
-
-
-    """
+    # """
+    # 如果：direction_id 0
+    #     *列出所有的分类
+    #     如果 classification_id = 0：
+    #         pass
+    #     else:
+    #         condition['classification_id'] = classification_id
+    #
+    # 否则：direction_id != 0
+    #     *列表当前方向下的所有分类
+    #      如果 classification_id = 0：
+    #         获取当前方向下的所有分类 [1,2,3,4]
+    #         condition['classification_id__in'] = [1,2,3,4]
+    #      else:
+    #         classification_id != 0
+    #         获取当前方向下的所有分类 [1,2,3,4]
+    #         classification_id 是否在 [1,2,3,4]  :
+    #             condition['classification_id'] = classification_id
+    #         else:
+    #             condition['classification_id__in'] = [1,2,3,4]
+    #
+    #
+    # """
     # models.Video.objects.filter()
-    # return render(request,'video2.html')
+    # return render(request,'video2.html')\
+
+def imgs(request):
+    # img_list = models.Img.objects.all()
+    return render(request,'img.html')
+
+def get_imgs(request):
+    nid = request.GET.get('nid')
+    img_list = models.Img.objects.filter(id__gt=nid).values('id','src','title')
+    img_list = list(img_list)
+    ret = {
+        'status': True,
+        'data': img_list
+    }
+    # return HttpResponse(json.dumps(ret))
+    #通过这个模块JsonResponse会直接执行json.dumps()，也就替换掉了之前一直使用的HttpResponse(json.dumps())
+    return JsonResponse(ret)
+    # return JsonResponse([11,22,33],safe=False)
+

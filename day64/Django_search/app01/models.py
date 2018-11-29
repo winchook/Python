@@ -66,3 +66,16 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Img(models.Model):
+    # ImgField和FileField的区别是ImgField可以获取文件的大小
+    src = models.FileField(max_length=32,verbose_name='图片路径',upload_to='static/upload')
+    title = models.CharField(max_length=16,verbose_name='标题')
+    summary = models.CharField(max_length=128,verbose_name='简介')
+
+    class Meta:
+        verbose_name_plural = '图片'
+    def __str__(self):
+        return self.title
+
