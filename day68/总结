@@ -1,0 +1,40 @@
+    6. 个人博客
+
+            个人主页：http://127.0.0.1:8000/wupeiqi.html
+                /(\w+).html   ->    func(site) # wupeiqi
+
+                # 个人信息
+                # 博客信息
+                    - 数据库字段+CSS文件名（warm，default）
+
+            文章最终：http://127.0.0.1:8000/wupeiqi/5.html
+                # 根据当前  wupeiqi + 5
+                    obj = article.objects.filter(nid=5,blog=blog).first()
+                    冗余
+
+                # 富文本编辑框
+                    CKEditor
+                    UEEditor
+                    TinyEditor
+                    KindEditor
+
+                    # 下载插件
+                    # 基本使用KindEditor
+
+            个人筛选：
+                      http://127.0.0.1:8000/wupeiqi/tag/2.html
+                      http://127.0.0.1:8000/wupeiqi/category/3.html
+                      http://127.0.0.1:8000/wupeiqi/date/2017-02.html
+                # 公告
+                # 分类
+                # 标签
+                # 时间
+
+                # 过滤
+                    url(r'^(?P<site>\w+)/(?P<condition>((tag)|(date)|(category)))/(?P<val>\w+-*\w*).html$', home.filter),
+
+                    # 当前博客id、
+                    # 数据库内置时间格式化函数
+
+
+            注意：个人主题定制
