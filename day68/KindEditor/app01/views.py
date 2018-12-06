@@ -4,3 +4,4 @@ from django.shortcuts import render
 
 def cunzhang(request):
     return render(request,'cunzhang.html')
+
