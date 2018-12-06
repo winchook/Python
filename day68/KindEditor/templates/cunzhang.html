@@ -10,19 +10,25 @@
     <script src="/static/plugins/kindeditor/kindeditor-all-min.js"></script>
 
     <script>
-        editor = KindEditor.create(
-            '#content',
-            {
-                resizeType: 1,
-                allowPreviewEmoticons: false,
-                allowImageUpload: false,
-                items: [
-                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                    'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
-
-            }
-        );
+        var editor = null;
+        KindEditor.ready(function (K) {
+            editor = KindEditor.create(
+                '#content',
+                {
+                    resizeType: 1,
+                    allowPreviewEmoticons: true,//如果是false，则无法预览表情，如果是true，则可以预览表情
+                    allowImageUpload: true,//如果是false，则只允许使用网络上的图片，如果是true，则可以本地上传照片
+                    items: [
+                        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+                    uploadJson: '/upload.html',
+                }
+            );
+        });
+        function  submitContent() {
+            editor.html()
+        }
 
     </script>
 </body>

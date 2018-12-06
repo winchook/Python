@@ -20,4 +20,5 @@ from app01 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('kindeditor', views.cunzhang),
+    path('upload.html', views.upload),
 ]
