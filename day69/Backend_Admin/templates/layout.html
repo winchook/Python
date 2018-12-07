@@ -37,14 +37,14 @@
             background-color: #1c5a9c;
             text-align: center;
         }
-        .pg-header .hl-menu .item{
+        .pg-header .hl-menu .item,.pg-header .hr-menu .item{
             color: white;
             padding: 0 10px;
             height: 48px;
             display: inline-block;
             text-decoration: none;
         }
-        .pg-header .hl-menu .item:hover{
+        .pg-header .hl-menu .item:hover,.pg-header .hr-menu .item:hover{
             background-color: cornflowerblue;
         }
         .pg-header .hl-menu .item-set{
@@ -66,6 +66,32 @@
         .pg-header .hl-menu .item-set:hover .sets{
             display: block;
         }
+        .avatar{
+            display: inline-block;
+            position: relative;
+
+        }
+        .avatar img{
+            margin-top: 4px;
+            border-radius: 50%;
+        }
+        .avatar .sets{
+            position: absolute;
+            width: 150px;
+            border: 1px solid #dddddd;
+            left: -90px;
+            top: 48px;
+            display: none;
+        }
+        .avatar .sets a{
+            display: block;
+            line-height: 30px;
+            text-decoration: none;
+        }
+        .avatar:hover .sets{
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -86,7 +112,22 @@
                 </div>
             </div>
         </div>
-        <div class="hr-menu right"></div>
+        <div class="hr-menu right">
+            <a class="item" href="#">消息</a>
+            <a class="item" href="#">通知</a>
+            <a class="item" href="#">任务</a>
+            <div class="avatar right">
+                <a class="item" href="#">
+                    <img src="/static/imgs/default.png">
+                </a>
+                <div class="sets">
+                    <a href="#">菜单四-1</a>
+                    <a href="#">菜单四-2</a>
+                    <a href="#">菜单四-3</a>
+                    <a href="#">菜单四-4</a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="pg-body">
         <div class="menus"></div>
