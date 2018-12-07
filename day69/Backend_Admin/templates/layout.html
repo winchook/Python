@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#    也可以将title加入到block块，因为每一个页面的title都是不一样的#}
+    <title>{% block title %}{% endblock %}</title>
+{#    添加这些block块是为了避免重复引用css，block块就可以定义自己特有的css样式#}
+    {% block css %}
+    
+    {% endblock %}
+</head>
+<body>
+{#首先对页面进行整体的布局,class名称就用横杠别用下划线#}
+    <div class="pg-header"></div>
+    <div class="pg-body">
+        <div class="menus"></div>
+        <div class="contents">
+{#            由于contents不是公用的，所以加上block#}
+            {% block contents %}
+            
+            {% endblock %}
+        </div>
+    </div>
+    <div class="pg-footer"></div>
+
+    {% block js %}
+    
+    {% endblock %}
+
+</body>
+</html>
