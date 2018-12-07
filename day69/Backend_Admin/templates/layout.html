@@ -29,6 +29,7 @@
             {#设定一个最小宽度,当大于最小宽度时则页面占据100%,当小于最小宽度时则页面下方出现宽度滚动条#}
             min-width: 1100px;
             line-height: 48px;
+            font-size: 15px;
         }
         .pg-header .logo{
             color: white;
@@ -91,6 +92,24 @@
         .avatar:hover .sets{
             display: block;
         }
+        .pg-body .menus{
+            width: 200px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: 48px;
+        }
+        {#对content进行设置，当内容太多时，滚动时上面左面都不动#}
+        .pg-body .contents{
+            position: absolute;
+            top: 48px;
+            right: 0;
+            bottom: 0;
+            background-color: darkblue;
+            left: 200px;
+            overflow: scroll;
+        }
 
     </style>
 </head>
@@ -129,9 +148,17 @@
             </div>
         </div>
     </div>
+
     <div class="pg-body">
-        <div class="menus"></div>
+        <div class="menus">
+            <div>
+                <a href="#">文章管理</a>
+                <a href="#">用户管理</a>
+                <a href="#">评论管理</a>
+            </div>
+        </div>
         <div class="contents">
+            <div style="height: 2000px;"></div>
 {#            由于contents不是公用的，所以加上block#}
             {% block contents %}
             
