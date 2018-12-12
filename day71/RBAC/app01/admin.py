@@ -8,3 +8,7 @@ admin.site.register(models.Action)
 admin.site.register(models.Permission)
 admin.site.register(models.Permission2Action)
 admin.site.register(models.Permission2Action2Role)
+
+#python manager.py createsuperuser
+#root
+#root!2345
