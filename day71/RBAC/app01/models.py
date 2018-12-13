@@ -6,6 +6,7 @@ from django.db import models
 class User(models.Model):
     username = models.CharField(max_length=32)
     password = models.CharField(max_length=64)
+    # m = models.ManyToManyField("Role")
 
     #修改成中文显示
     class Meta:
@@ -51,6 +52,19 @@ class Action(models.Model):
 
     def __str__(self):
         return self.caption
+
+# 菜单表
+class Menu(models.Model):
+    caption = models.CharField(max_length=32)
+    parent = models.ForeignKey('self',related_name='p',null=True,blank=True,on_delete=models.CASCADE)
+
+    # 修改成中文显示
+    class Meta:
+        verbose_name_plural = '菜单表'
+
+    def __str__(self):
+        return "%s" %(self.caption,)
+
 # Permission Table
 class Permission(models.Model):
     #http://127.0.0.1:8000/user.html用户管理1
@@ -63,6 +77,7 @@ class Permission(models.Model):
     #标题：表示URL的含义
     caption = models.CharField(max_length=32)
     url = models.CharField(max_length=64)
+    menu = models.ForeignKey(Menu,null=True,blank=True,on_delete=models.CASCADE)
 
     # 修改成中文显示
     class Meta:
