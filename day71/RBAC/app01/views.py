@@ -24,10 +24,56 @@ def login(request):
 
     # 获取个人所有的权限列表，角色跟权限是多对多的关系,由于r代指的是Role对象，所以这里只能传Role对象
     # 建议放置在session中，缺点：无法获取实时权限信息，需要重新登录
-    permission2action_list = models.Permission2Action.objects.\
-        filter(permission2action2role__r__in=role_list).\
-        values('p__url','a__code').distinct()#去重
-    for item in permission2action_list:
-        print(item)
+    # permission2action_list = models.Permission2Action.objects.\
+    #     filter(permission2action2role__r__in=role_list).\
+    #     values('p__url','a__code').distinct()#去重
+    # for item in permission2action_list:
+    #     print(item)
     # print(permission2action_list)
+
+    # 2个人,应该在菜单中显示的权限 --- 在最后一层
+    menu_leaf_list = models.Permission2Action.objects. \
+        filter(permission2action2role__r__in=role_list).exclude(p__menu__isnull=True). \
+        values('p_id','p__url', 'p__caption','p__menu').distinct()
+    menu_leaf_dict = {}
+    for item in menu_leaf_list:
+        # {'p__menu': 4, 'p__url': '/report.html', 'p__caption': '报表管理'}
+        item = {
+            'id': item['p_id'],
+            'url': item['p__url'],
+            'caption': item['p__caption'],
+            'parent_id': item['p__menu'],
+            'child': []
+        }
+        if item['parent_id'] in menu_leaf_dict:
+            menu_leaf_dict[item['parent_id']].append(item)
+        else:
+            menu_leaf_dict[item['parent_id']] = [item,]
+    print('挂钩上的位置....')
+    menu_list = models.Menu.objects.values('id','caption','parent_id')
+    menu_dict = {}
+    for item in menu_list:
+        item['child'] = []
+        menu_dict[item['id']] = item
+
+    # 把袜子挂载衣钩上
+    for k,v in menu_leaf_dict.items():
+        menu_dict[k]['child'] = v
+
+
+    # ##################### 处理等级关系
+    #　menu_dict: 应用：评论（models.xx.objects.values('...')）
+    result = []
+    for row in menu_dict.values():
+        if not row['parent_id']:
+            result.append(row)
+        else:
+            menu_dict[row['parent_id']]['child'].append(row)
+
+    for item in result:
+        print(item['caption'])
+        for r in item['child']:
+            print('----',r['caption'])
+            for n in r['child']:
+                print('-------->',n['caption'])
     return HttpResponse('...')
