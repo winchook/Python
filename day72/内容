@@ -1,0 +1,44 @@
+    9. 权限管理
+
+       - 动态菜单(关系存在数据库)
+       - 基于角色分配(RBAC)Role Based Access Control
+
+       流程：
+            a. 用户登陆
+            b. 根据用户获取所有的权限（url+action）
+            c. 根据用户获取所有的权限（url+action）根据URL去重（）
+            d. 放在左侧菜单（）
+       作业:
+            1. 登陆，获取所有权限（url+action）
+                ORM
+
+
+
+            2. 所有菜单（）
+                v = models.Menus.objects.values('id','caption','parent_id')
+                [
+                    {id:'1','caption': '菜单1','parent_id':None},
+                    {'caption': '菜单1.1','parent_id':1},
+                    {'caption': '菜单1.2'},
+                    {'caption': '菜单1.2.1'},
+                    {'caption': '菜单2'},
+                    {'caption': '菜单3'},
+                    {'caption': '菜单3.1'},
+                ]
+                ==>
+                [
+                    {'caption': '菜单1','child': [{'caption': '菜单1.1'},{'caption': '菜单1.2','child':[{'caption': '菜单1.2.1'},]}]}
+                    {'caption': '菜单2'}
+                    {'caption': '菜单3'}
+                ]
+
+                # 递归
+                # python中：字典，列表（引用类型）
+
+        思考：
+            a. 用递归的形式讲所有菜单的等级管理列(完成)
+            b. 不显示无权限的菜单  (完成)
+            c. 仅展开当前访问的菜单，其他闭合
+
+
+        ====》一个类，一个装饰器，八张表
