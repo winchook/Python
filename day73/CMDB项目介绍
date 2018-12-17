@@ -54,3 +54,21 @@ CMDB工具中至少包含这几种关键的功能：整合、调和、同步、�
 应用映射与可视化，说明应用间的关系并反应应用和其他组件之间的依存关系，了解变更造成的影响并帮助诊断问题。
 
 
+采集数据方式：
+
+Agent方式：
+使用get和post方式进行数据提交
+
+Paramiko类
+基于CMDB中控机和SSH对远程服务器执行命令实现
+缺点：这种方式适用于少量的服务器，传输效率低
+
+SaltStack
+基于SaltStack的master上的pillar以及远程执行命令实现
+优点：快，开发成本低
+缺点：依赖saltstack
+
+Puppet
+基于Puppet的factor和report功能实现
+优点：自动汇报
+缺点：使用ruby语言开发
