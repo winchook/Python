@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/day71/RBAC/.idea/RBAC.iml" filepath="$PROJECT_DIR$/day71/RBAC/.idea/RBAC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day72/RBAC_SHOW/.idea/RBAC_SHOW.iml" filepath="$PROJECT_DIR$/day72/RBAC_SHOW/.idea/RBAC_SHOW.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/learning.iml" filepath="$PROJECT_DIR$/.idea/learning.iml" />
     </modules>
   </component>
