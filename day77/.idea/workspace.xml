@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c68733e2-e473-464e-a416-6d822d24334a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/60077ff4-7ff8-40e4-b0e8-37ada308f771.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/7924ba56-9fc0-4f75-9d15-caa4a0c5e2b4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/day77.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day77.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day77/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day77/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day77/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day77/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-1.12.4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-3.1.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/nbList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/asset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/business_unit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/Click-7.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/Django-2.1.5.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/Flask-1.0.2.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/Flask_Script-2.0.6.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/Mako-1.0.7.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/OpenSSL/rand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/PIL/WalImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/PyMySQL-0.9.2.dist-info/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/alembic-1.0.5.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/alembic/autogenerate/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/alembic/templates/multidb/script.py.mako" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/alembic/testing/plugin/bootstrap.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/alembic/testing/plugin/noseplugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/alembic/testing/plugin/plugin_base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/alembic/testing/plugin/pytestplugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/asn1crypto/_inet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/asn1crypto/crl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/asn1crypto/pem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/asn1crypto/tsp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/bcrypt-3.1.4.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/beautifulsoup4-4.6.3.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/bs4/diagnose.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/certifi-2018.10.15.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/chardet-3.0.4.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/chardet/hebrewprober.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/chardet/sbcharsetprober.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/cryptography-2.4.1.dist-info/LICENSE.BSD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/cryptography/hazmat/backends/openssl/x25519.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/cryptography/hazmat/primitives/ciphers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/cryptography/hazmat/primitives/kdf/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/cryptography/hazmat/primitives/kdf/hkdf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/cryptography/x509/name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/app_template/admin.py-tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/app_template/migrations/__init__.py-tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/bg/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/cs/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/en/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/eo/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/es/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/es_AR/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/fi/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/fy/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/ga/formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/gl/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/hr/formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/is/formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/km/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/lv/formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/mk/formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/ml/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/nl/formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/conf/locale/pa/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/bs/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/ca/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/dsb/LC_MESSAGES/djangojs.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/en_GB/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/en_GB/LC_MESSAGES/djangojs.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/es/LC_MESSAGES/djangojs.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/es_VE/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/eu/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/fa/LC_MESSAGES/djangojs.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/fy/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/gl/LC_MESSAGES/djangojs.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/he/LC_MESSAGES/djangojs.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/hr/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/hr/LC_MESSAGES/djangojs.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/ka/LC_MESSAGES/djangojs.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/lt/LC_MESSAGES/djangojs.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/ne/LC_MESSAGES/djangojs.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/ro/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/sr_Latn/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/sr_Latn/LC_MESSAGES/djangojs.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/sw/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/te/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/th/LC_MESSAGES/djangojs.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/locale/vi/LC_MESSAGES/djangojs.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/sites.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/css/fonts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/img/icon-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/img/inline-delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/templates/admin/change_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/templates/admin/widgets/radio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/templatetags/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admin/views/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/af/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/bn/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/br/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/et/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/eu/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/hr/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/id/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/ne/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/sr/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/locale/sv/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/templates/admin_doc/missing_docutils.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/templates/admin_doc/template_tag_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/admindocs/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/ar/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/fa/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/gd/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/it/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/ko/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/nl/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/sq/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/th/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/auth/locale/zh_Hans/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/ar/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/be/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/en_AU/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/es/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/es_VE/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/hu/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/kk/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/locale/ko/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/contenttypes/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/flatpages/locale/ar/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/flatpages/locale/es/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/flatpages/locale/fi/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/flatpages/locale/hu/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/flatpages/locale/nl/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/flatpages/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/db/backends/base/operations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/db/backends/postgis/features.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/db/backends/postgis/introspection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/geoip2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/geos/coordseq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/geos/prototypes/misc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/locale/bs/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/locale/eu/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/locale/ia/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/locale/km/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/locale/lt/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/locale/nn/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/locale/sk/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/ptr.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/sitemaps/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/gis/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/af/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/bn/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/br/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/en_AU/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/eo/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/fa/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/id/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/mn/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/mr/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/ne/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/pt/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/sr/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/sr_Latn/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/sv/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/th/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/humanize/locale/zh_Hans/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/fields/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/fields/citext.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/locale/az/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/locale/gd/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/locale/it/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/locale/ka/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/locale/lv/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/locale/sl/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/postgres/locale/uk/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/ast/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/bg/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/cs/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/da/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/de/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/dsb/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/es_CO/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/eu/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/ia/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/km/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/mk/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/nb/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/pt_BR/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/redirects/locale/sk/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/bs/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/da/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/de/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/es_AR/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/lt/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/mk/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/ta/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/tr/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/uz/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sessions/locale/zh_Hans/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/cy/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/et/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/ga/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/hu/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/kab/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/mr/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/pt/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/sq/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/sv/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/th/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/locale/zh_Hant/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/sites/middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/staticfiles/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/contrib/staticfiles/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/core/checks/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/core/management/commands/squashmigrations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/core/management/sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/core/management/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/core/servers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/db/backends/dummy/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/db/migrations/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/db/migrations/topological_sort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/db/models/aggregates.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/db/models/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/db/models/sql/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/forms/jinja2/django/forms/widgets/date.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/forms/jinja2/django/forms/widgets/time.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/forms/templates/django/forms/widgets/hidden.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/forms/templates/django/forms/widgets/number.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/forms/templates/django/forms/widgets/radio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/test/html.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/utils/baseconv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/utils/inspect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/utils/translation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/django/views/templates/technical_404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/flask/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/flask/sessions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/flask/testing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/gevent/_local.cp36-win_amd64.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/gevent/os.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/gevent/signal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/gevent/threading.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/idna-2.7.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/idna/package_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/image-1.5.27.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/image/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/itsdangerous/exc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/itsdangerous/jws.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/jinja2/_compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/jsons/_common_impl.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/paramiko-2.4.2.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/paramiko/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/paramiko/sftp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_internal/commands/help.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_internal/commands/install.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_internal/compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/chardet/big5prober.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/chardet/euctwfreq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/chardet/universaldetector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/html5lib/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/html5lib/treewalkers/etree_lxml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/idna/core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/requests/packages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/urllib3/contrib/_securetransport/bindings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-10.0.1-py3.6.egg/pip/_vendor/urllib3/packages/backports/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip-18.1.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_internal/cli/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_internal/req/req_tracker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_internal/utils/filesystem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/chardet/big5freq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/chardet/euctwfreq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/chardet/sjisprober.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/colorama/ansi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/colorama/ansitowin32.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/distlib/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/distlib/t32.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/distlib/t64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/distlib/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/distlib/version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/html5lib/treebuilders/dom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/html5lib/treewalkers/dom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/lockfile/pidlockfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/msgpack/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/packaging/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/progress/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/requests/packages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pip/_vendor/urllib3/connection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pyasn1/codec/ber/eoo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pycparser/c_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pycparser/plyparser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/python_dateutil-2.7.5.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz-2018.7.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Africa/Ceuta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Africa/Freetown" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Africa/Luanda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Africa/Ndjamena" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Africa/Nouakchott" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Argentina/San_Juan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Bahia_Banderas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Danmarkshavn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/El_Salvador" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Grenada" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Indiana/Indianapolis" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Indiana/Marengo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Indiana/Winamac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Mendoza" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Montserrat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Rio_Branco" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/St_Thomas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/America/Tortola" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Asia/Taipei" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Asia/Vladivostok" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Atlantic/Faroe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Australia/Hobart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Australia/South" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Europe/Brussels" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Europe/Chisinau" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Europe/Saratov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Europe/Vilnius" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Indian/Comoro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Indian/Mauritius" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/MST7MDT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Pacific/Galapagos" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/Pacific/Yap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/pytz/zoneinfo/UCT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/requests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/requests/adapters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/requests/structures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/databases/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/dialects/mssql/zxjdbc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/dialects/mysql/mysqlconnector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/dialects/postgresql/hstore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/engine/interfaces.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/event/legacy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/ext/hybrid.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/interfaces.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/orm/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/sql/operators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/testing/fixtures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/testing/pickleable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/testing/plugin/noseplugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/testing/suite/test_sequence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/sqlalchemy/util/compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/tornado/platform/epoll.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/tornado/test/auth_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/urllib3/connection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/urllib3/response.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/werkzeug/contrib/limiter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/werkzeug/debug/console.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/werkzeug/debug/shared/debugger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/werkzeug/posixemulation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/wheel/cli/convert.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Lib/site-packages/wheel/pkginfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../venv/Scripts/_overlapped.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/learning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day72/RBAC_SHOW/.idea/RBAC_SHOW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day72/RBAC_SHOW/.idea/RBAC_SHOW.iml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day77.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>day75</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/repository/models.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/day77/settings.py" />
+        <option value="$PROJECT_DIR$/day77/wsgi.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="85" />
+    <option name="y" value="25" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="day77" type="b2602c69:ProjectViewProjectNode" />
+              <item name="day77" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="day77" type="Python.DjangoServer" factoryName="Django server">
+      <module name="day77" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="day77.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c68733e2-e473-464e-a416-6d822d24334a" name="Default Changelist" comment="" />
+      <created>1554193078899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554193078899</updated>
+      <workItem from="1554193080040" duration="1908000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1908000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1816354" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32956153" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" weight="0.32956153" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" weight="0.3297587" />
+      <window_info anchor="right" id="Database" weight="0.3297587" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="das://60077ff4-7ff8-40e4-b0e8-37ada308f771/schema/main/table/repository_asset">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#639#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day77/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day77/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day77/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-106" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day77/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#222#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4604">
+          <folding>
+            <element signature="e#73#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4465">
+          <caret line="235" column="25" lean-forward="true" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#639#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3021">
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#22#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day77.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
